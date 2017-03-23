@@ -117,7 +117,7 @@ gulp.task('sass', function() {
 });
 
 // Copy the dist folder to a gh-pages branch
-gulp.task('deploy', function() {
+gulp.task('deploy', ['default'], function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
 });
