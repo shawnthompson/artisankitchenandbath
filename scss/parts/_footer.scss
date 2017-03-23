@@ -1,0 +1,23 @@
+// Footer
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+
+    .contact {
+        .fa {
+            margin-right: 5px;
+        }
+    }
+    span.copyright {
+        line-height: 40px;
+        @include heading-font;
+        text-transform: none;
+    }
+    ul.quicklinks {
+        margin-bottom: 0;
+        line-height: 40px;
+        @include heading-font;
+        text-transform: none;
+    }
+}
