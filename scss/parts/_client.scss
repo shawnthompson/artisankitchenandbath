@@ -2,6 +2,9 @@
 
 aside.clients {
 
+	overflow: hidden;
+	overflow-y: auto;
+
     img {
         margin: 50px auto;
     }
