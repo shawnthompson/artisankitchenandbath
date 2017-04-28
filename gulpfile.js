@@ -53,7 +53,7 @@ gulp.task('copy', function() {
     gulp.src(['mail/*.*'])
         .pipe(gulp.dest('dist/mail'))
 
-    gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
+    gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*'])
         .pipe(gulp.dest('dist/vendor/bootstrap'))
 
     gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
@@ -75,7 +75,7 @@ gulp.task('copy', function() {
 
 // Minify JS
 gulp.task('minify-js', function() {
-    return gulp.src('dist/js/artisan.js')
+    return gulp.src('dist/js/**')
         .pipe(uglify())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))
