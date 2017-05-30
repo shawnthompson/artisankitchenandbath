@@ -3,7 +3,7 @@
 header {
     background-image: url('../img/header-lg.jpg');
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-position: center center;
     @include background-cover;
     text-align: center;
