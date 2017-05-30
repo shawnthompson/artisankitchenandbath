@@ -7,6 +7,8 @@ var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 var ghPages = require('gulp-gh-pages');
+var del = require('del');
+var vinylPaths = require('vinyl-paths');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -83,6 +85,14 @@ gulp.task('minify-js', function() {
         .pipe(browserSync.reload({
             stream: true
         }))
+});
+
+// Clean dist folder
+gulp.task('clean', function () {
+  return gulp.src('tmp/*')
+    .pipe(vinylPaths(del))
+    .pipe(stripDebug())
+    .pipe(gulp.dest('dist'));
 });
 
 // Run everything

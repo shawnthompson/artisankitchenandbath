@@ -11,9 +11,9 @@
   "devDependencies": {
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.13.0",
+    "del": "^2.2.2",
     "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^2.0.10",
     "gulp-gh-pages": "^0.5.4",
     "gulp-header": "^1.8.7",
@@ -21,7 +21,8 @@
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^1.5.4",
     "jquery": "^1.11.3",
-    "picturefill": "^3.0.2"
+    "picturefill": "^3.0.2",
+    "vinyl-paths": "^2.1.0"
   },
   "repository": {
     "type": "git",
