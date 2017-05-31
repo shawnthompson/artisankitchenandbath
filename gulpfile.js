@@ -9,6 +9,8 @@ var pkg = require('./package.json');
 var ghPages = require('gulp-gh-pages');
 var del = require('del');
 var vinylPaths = require('vinyl-paths');
+var handlebars = require('gulp-compile-handlebars');
+var rename = require('gulp-rename');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -21,7 +23,7 @@ var banner = ['/*!\n',
 
 // Compile SASS files from /scss into /css
 gulp.task('sass', function() {
-    return gulp.src('scss/artisan.scss')
+    return gulp.src('_src/scss/artisan.scss')
         .pipe(sass())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('dist/css'))
@@ -43,16 +45,14 @@ gulp.task('minify-css', ['sass'], function() {
 
 // Copy vendor libraries from /node_modules into /vendor
 gulp.task('copy', function() {
-    gulp.src(['*.html'])
-        .pipe(gulp.dest('dist'))
 
-    gulp.src(['js/**/*.js'])
+    gulp.src(['_src/js/**/*.js'])
         .pipe(gulp.dest('dist/js'))
 
-    gulp.src(['img/**/*.*'])
+    gulp.src(['_src/img/**/*.*'])
         .pipe(gulp.dest('dist/img'))
 
-    gulp.src(['mail/*.*'])
+    gulp.src(['_src/mail/*.*'])
         .pipe(gulp.dest('dist/mail'))
 
     gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*'])
@@ -95,8 +95,21 @@ gulp.task('clean', function () {
     .pipe(gulp.dest('dist'));
 });
 
+// Handlebars
+gulp.task('handlebars', function () {
+    options = {
+        batch : ['./_src/partials']
+        }
+
+    return gulp.src('_src/index.handlebars')
+        .pipe(handlebars(options))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('dist'));
+});
+
+
 // Run everything
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['handlebars', 'sass', 'minify-css', 'minify-js', 'copy']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -106,16 +119,6 @@ gulp.task('browserSync', function() {
         },
     })
 })
-
-// Dev task with browserSync
-gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
-    gulp.watch('scss/*.scss', ['sass']);
-    gulp.watch('css/*.css', ['minify-css']);
-    gulp.watch('js/*.js', ['minify-js']);
-    // Reloads the browser whenever HTML or JS files change
-    gulp.watch('*.html', browserSync.reload);
-    gulp.watch('js/**/*.js', browserSync.reload);
-});
 
 // Compiles SCSS files from /scss into /css
 // NOTE: This theme uses LESS by default. To swtich to SCSS you will need to update this gulpfile by changing the 'less' tasks to run 'sass'!
@@ -127,6 +130,16 @@ gulp.task('sass', function() {
         .pipe(browserSync.reload({
             stream: true
         }))
+});
+
+// Dev task with browserSync
+gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
+    gulp.watch('scss/*.scss', ['sass']);
+    gulp.watch('css/*.css', ['minify-css']);
+    gulp.watch('js/*.js', ['minify-js']);
+    // Reloads the browser whenever HTML or JS files change
+    gulp.watch('*.html', browserSync.reload);
+    gulp.watch('js/**/*.js', browserSync.reload);
 });
 
 // Copy the dist folder to a gh-pages branch
