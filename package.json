@@ -1,32 +1,32 @@
 {
-  "name": "artisankitchenandbath",
-  "title": "Artisan Kitchen and Bath",
-  "version": "1.0.0",
-  "homepage": "https://shawnthompson.github.io/artisankitchenandbath/",
-  "author": "Plansmash Media",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/shawnthompson/artisankitchenandbath/blob/gh-pages/LICENSE"
-  },
-  "devDependencies": {
-    "bootstrap": "^3.3.7",
-    "browser-sync": "^2.13.0",
-    "del": "^2.2.2",
-    "font-awesome": "^4.6.3",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.10",
-    "gulp-compile-handlebars": "^0.6.1",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-header": "^1.8.7",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^1.5.4",
-    "jquery": "^1.11.3",
-    "picturefill": "^3.0.2",
-    "vinyl-paths": "^2.1.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shawnthompson/artisankitchenandbath.git"
-  }
+	"name": "artisankitchenandbath",
+	"title": "Artisan Kitchen and Bath",
+	"version": "1.0.0",
+	"homepage": "https://shawnthompson.github.io/artisankitchenandbath/",
+	"author": "Plansmash Media",
+	"license": {
+		"type": "MIT",
+		"url": "https://github.com/shawnthompson/artisankitchenandbath/blob/gh-pages/LICENSE"
+	},
+	"devDependencies": {
+		"bootstrap": "^3.3.7",
+		"font-awesome": "^4.6.3",
+		"grunt": "^0.4.5",
+		"grunt-assemble": "^0.5.0",
+		"grunt-contrib-clean": "^1.0.0",
+		"grunt-contrib-concat": "^1.0.0",
+		"grunt-contrib-copy": "^1.0.0",
+		"grunt-contrib-cssmin": "^1.0.1",
+		"grunt-contrib-uglify": "^1.0.1",
+		"grunt-contrib-watch": "^1.0.0",
+		"grunt-gh-pages": "^1.1.0",
+		"grunt-responsive-images": "^0.1.7",
+		"grunt-sass": "^1.1.0",
+		"jquery": "^3.1.1",
+		"load-grunt-tasks": "^3.5.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/shawnthompson/artisankitchenandbath.git"
+	}
 }
