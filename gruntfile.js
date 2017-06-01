@@ -112,13 +112,13 @@ module.exports = function(grunt) {
 
 		watch: {
 			css: {
-				files: ['_src/sass/*.*'],
+				files: ['_src/scss/*/*.*'],
 				tasks: ['sass']
 			},
 
 			html: {
-				files: ['_src/pages/*.html'],
-				tasks: ['copy:pages']
+				files: ['_src/pages/*.hbs', '_src/partials/*.hbs'],
+				tasks: ['assemble']
 			},
 
 			script: {
