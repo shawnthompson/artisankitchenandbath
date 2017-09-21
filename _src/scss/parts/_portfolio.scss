@@ -41,19 +41,20 @@
             }
         }
         .portfolio-caption {
-            max-width: 400px;
-            margin: 0 auto;
             background-color: white;
-            text-align: center;
+            font-style: italic;
+            margin: 0 auto;
+            max-width: 400px;
             padding: 25px;
             h4 {
+                margin: 0 0 10px 0;
+                text-align: center;
                 text-transform: none;
-                margin: 0;
             }
             p {
                 @include serif-font;
-                font-style: italic;
                 font-size: 16px;
+                line-height: 1.4em;
                 margin: 0;
             }
         }
