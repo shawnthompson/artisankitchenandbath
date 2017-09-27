@@ -42,6 +42,13 @@ module.exports = function(grunt) {
 				cwd : 'dist/',
 				src: ['*/*.*'],
 				dest: 'dist/'
+			},
+
+			mail: {
+				expand: true,
+				cwd: '_src/mail',
+				src: ['*.*'],
+				dest: 'dist/mail'
 			}
 		},
 
