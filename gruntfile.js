@@ -49,6 +49,13 @@ module.exports = function(grunt) {
 				cwd: '_src/mail',
 				src: ['*.*'],
 				dest: 'dist/mail'
+			},
+
+			js: {
+				expand: true,
+				cwd: '_src/js',
+				src:['**/*.*'],
+				dest: 'dist/js'
 			}
 		},
 
@@ -140,7 +147,7 @@ module.exports = function(grunt) {
 			'clean',
 			'sass',
 			'copy',
-			'concat',
+			// 'concat',
 			'assemble'
 			// 'responsive_images',
 			// 'cssmin'
