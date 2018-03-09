@@ -1,0 +1,10 @@
+---
+version: "2"
+
+services:
+  apache:
+    image: 'httpd:alpine'
+    ports:
+      - '8888:80'
+    volumes:
+      - './builds/development:/usr/local/apache2/htdocs'

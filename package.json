@@ -1,0 +1,34 @@
+{
+  "name": "artisankitchenandbath",
+  "title": "Artisan Kitchen and Bath",
+  "version": "1.0.0",
+  "homepage": "https://shawnthompson.github.io/artisankitchenandbath/",
+  "license": "MIT",
+  "author": {
+  	"name": "Plansmash Media",
+	"email": "plansmash@me.com"
+  },
+  "bugs": {
+    "url": "https://shawnthompson.github.io/artisankitchenandbath/issues"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "grunt": "^1.0.2",
+    "grunt-assemble": "^0.6.3",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-gh-pages": "^2.0.0",
+    "grunt-responsive-images": "^1.10.1",
+    "grunt-sass": "^2.1.0",
+    "jquery": "^3.1.1",
+    "load-grunt-tasks": "^3.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shawnthompson/artisankitchenandbath.git"
+  }
+}
