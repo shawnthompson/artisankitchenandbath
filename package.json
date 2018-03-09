@@ -12,13 +12,14 @@
     "url": "https://shawnthompson.github.io/artisankitchenandbath/issues"
   },
   "dependencies": {
-	  "bootstrap": "^3.3.7",
-	  "jquery": "^3.1.1",
-	  "jquery.easing": "^1.4.1"
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "jquery.easing": "^1.4.1"
   },
   "devDependencies": {
     "grunt": "^1.0.2",
     "grunt-assemble": "^0.6.3",
+    "grunt-connect": "^0.2.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",

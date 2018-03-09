@@ -123,6 +123,12 @@ module.exports = function(grunt) {
 			src: ['**']
 		},
 
+		connect: {
+			port: 9000,
+			base: "./builds/development",
+			keepAlive: true
+		},
+
 		watch: {
 			css: {
 				files: ['./components/sass/*.*'],
