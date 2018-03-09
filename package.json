@@ -5,8 +5,8 @@
   "homepage": "https://shawnthompson.github.io/artisankitchenandbath/",
   "license": "MIT",
   "author": {
-  	"name": "Plansmash Media",
-	"email": "plansmash@me.com"
+    "name": "Plansmash Media",
+    "email": "plansmash@me.com"
   },
   "bugs": {
     "url": "https://shawnthompson.github.io/artisankitchenandbath/issues"
@@ -25,7 +25,8 @@
     "grunt-responsive-images": "^1.10.1",
     "grunt-sass": "^2.1.0",
     "jquery": "^3.1.1",
-    "load-grunt-tasks": "^3.5.0"
+    "load-grunt-tasks": "^3.5.0",
+    "jquery.easing": "^1.4.1"
   },
   "repository": {
     "type": "git",
