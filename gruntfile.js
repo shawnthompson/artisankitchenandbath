@@ -147,4 +147,10 @@ module.exports = function(grunt) {
 			// 'responsive_images',
 			// 'cssmin'
 	]);
+
+	grunt.registerTask(
+		'test', [
+			'default',
+			'connect'
+	]);
 };
