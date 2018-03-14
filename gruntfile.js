@@ -121,12 +121,17 @@ module.exports = function(grunt) {
 			},
 
 			src: ['**']
-		},
-
+		},		
+		
 		connect: {
-			port: 9000,
-			base: "./builds/development",
-			keepAlive: true
+			server: {
+				options: {
+					keepalive: true,
+					base: './builds/development',
+					port: 1337,
+					hostname: 'localhost'
+				}
+			}
 		},
 
 		watch: {
