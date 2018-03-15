@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 			images: {
 				expand: true,
 				cwd : './components/images/',
-				src: ['*.*'],
+				src: ['**/*.*'],
 				dest: './builds/development/img/'
 			}
 		},
@@ -112,6 +112,7 @@ module.exports = function(grunt) {
 				options: {
 					keepalive: true,
 					base: './builds/development',
+					livereload: true,
 					port: 1337,
 					hostname: 'localhost'
 				}
@@ -125,8 +126,8 @@ module.exports = function(grunt) {
 			},
 
 			html: {
-				files: ['./components/pages/*.html'],
-				tasks: ['copy:pages']
+				files: ['./components/includes/*.hbs', './components/pages/*.hbs', './components/layouts/*.hbs'],
+				tasks: ['assemble']
 			},
 
 			script: {

@@ -1,78 +1,33 @@
-$(document).ready(function(){
+// Agency Theme JavaScript
 
-/**
- * This object controls the nav bar. Implement the add and remove
- * action over the elements of the nav bar that we want to change.
- *
- * @type {{flagAdd: boolean, elements: string[], add: Function, remove: Function}}
- */
-var myNavBar = {
+(function ($) {
+    "use strict"; // Start of use strict
 
-    flagAdd: true,
+    // jQuery for page scrolling feature - requires jQuery Easing plugin
+    $('a.page-scroll').bind('click', function (event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+        }, 1250, 'easeInOutExpo');
+        event.preventDefault();
+    });
 
-    elements: [],
+    // Highlight the top nav as scrolling occurs
+    $('body').scrollspy({
+        target: '.navbar-fixed-top',
+        offset: 51
+    });
 
-    init: function (elements) {
-        this.elements = elements;
-    },
+    // Closes the Responsive Menu on Menu Item Click
+    $('.navbar-collapse ul li a').click(function () {
+        $('.navbar-toggle:visible').click();
+    });
 
-    add : function() {
-        if(this.flagAdd) {
-            for(var i=0; i < this.elements.length; i++) {
-                document.getElementById(this.elements[i]).className += " fixed-theme";
-            }
-            this.flagAdd = false;
+    // Offset for Main Navigation
+    $('#mainNav').affix({
+        offset: {
+            top: 100
         }
-    },
+    })
 
-    remove: function() {
-        for(var i=0; i < this.elements.length; i++) {
-            document.getElementById(this.elements[i]).className =
-                    document.getElementById(this.elements[i]).className.replace( /(?:^|\s)fixed-theme(?!\S)/g , '' );
-        }
-        this.flagAdd = true;
-    }
-
-};
-
-/**
- * Init the object. Pass the object the array of elements
- * that we want to change when the scroll goes down
- */
-myNavBar.init(  [
-    "header",
-    "header-container",
-    "brand"
-]);
-
-/**
- * Function that manage the direction
- * of the scroll
- */
-function offSetManager(){
-
-    var yOffset = 0;
-    var currYOffSet = window.pageYOffset;
-
-    if(yOffset < currYOffSet) {
-        myNavBar.add();
-    }
-    else if(currYOffSet == yOffset){
-        myNavBar.remove();
-    }
-
-}
-
-/**
- * bind to the document scroll detection
- */
-window.onscroll = function(e) {
-    offSetManager();
-}
-
-/**
- * We have to do a first detectation of offset because the page
- * could be load with scroll down set.
- */
-offSetManager();
-});
+})(jQuery); // End of use strict
