@@ -1,0 +1,25 @@
+{
+  "name": "artisankitchenandbath",
+  "title": "Artisan Kitchen and Bath",
+  "version": "1.0.0",
+  "description": "Source code using Webpack for https://artisankitchenandbath.ca/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawnthompson/artisankitchenandbath.git"
+  },
+  "keywords": [],
+  "author": "Plansmash Media",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shawnthompson/artisankitchenandbath/issues"
+  },
+  "homepage": "https://github.com/shawnthompson/artisankitchenandbath#readme",
+  "devDependencies": {
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  }
+}
