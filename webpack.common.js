@@ -1,6 +1,7 @@
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry : {
@@ -15,7 +16,9 @@ module.exports = {
       {
         test : /\.hbs$/,
         use : [
-          { loader : 'html-loader' },
+          { 
+            loader : 'html-loader' 
+          },
           {
             loader : 'assemble-webpack-loader',
             options : {
@@ -25,6 +28,15 @@ module.exports = {
                 __TEST__ : 'test'
               }
             }
+          },
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use : [
+          {
+            loader : 'file-loader',
+            options : {name: '[name].[ext]',outputPath: 'img'}
           }
         ]
       }
@@ -35,6 +47,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template : path.resolve('./src/html/pages/index.hbs'),
       filename : 'index.html'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from : path.resolve('./src/img'),
+        to : path.resolve('./dist/img')
+      }
+    ])
   ]
 }

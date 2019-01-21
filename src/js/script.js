@@ -1,1 +1,2 @@
-import '../scss/artisan.scss'
+import 'bootstrap';
+import '../scss/artisan.scss';
