@@ -10,10 +10,31 @@ module.exports = {
       filename : 'artisan.js',
       path : path.resolve(__dirname, 'dist')
   },
+  module : {
+    rules : [
+      {
+        test : /\.hbs$/,
+        use : [
+          { loader : 'html-loader' },
+          {
+            loader : 'assemble-webpack-loader',
+            options : {
+              layouts : path.resolve ('./src/html/layouts/**/*.hbs'),
+              partials : path.resolve ('./src/html/partials/**/*.hbs'),
+              define : {
+                __TEST__ : 'test'
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
   plugins : [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-        title : 'My killer app'
+      template : path.resolve('./src/html/pages/index.hbs'),
+      filename : 'index.html'
     })
   ]
 }
