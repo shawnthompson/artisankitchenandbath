@@ -16,6 +16,6 @@ module.exports = merge(common, {
         ]
     },
     plugins : [
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin('./css/style.css')
     ]
 })
