@@ -2,6 +2,8 @@ const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const assembleWebpack = require('assemble-webpack');
+const handlebarsHelpers = require('handlebars-helpers');
 
 module.exports = {
   entry : {
@@ -20,15 +22,8 @@ module.exports = {
             loader : 'html-loader' 
           },
           {
-            loader : 'assemble-webpack-loader',
-            options : {
-              layouts : path.resolve ('./src/html/layouts/**/*.hbs'),
-              partials : path.resolve ('./src/html/partials/**/*.hbs'),
-              define : {
-                __TEST__ : 'test'
-              }
-            }
-          },
+            loader : 'assemble-webpack',
+          }
         ]
       },
       {
@@ -42,17 +37,25 @@ module.exports = {
       }
     ]
   },
+
   plugins : [
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      template : path.resolve('./src/html/pages/index.hbs'),
-      filename : 'index.html'
-    }),
     new CopyWebpackPlugin([
       {
         from : path.resolve('./src/img'),
         to : path.resolve('./dist/img')
       }
-    ])
+    ]),
+    new assembleWebpack.AttachedPlugin({ // assemble demo https://github.com/raviroshan/assemble-webpack-demo
+      baseLayout: ['./src/html/layouts/**/*.hbs'],
+      basePages: ['./src/html/pages/**/*.hbs'],
+      partialsLayout: ['./src/html/partials/**/*.hbs'],
+      partialsData: [
+        './src/html/data/partials/**/*.json',
+        './src/html/data/layouts/**/*.json',
+        './src/html/data/pages/**/*.json'
+      ],
+      helpers: [handlebarsHelpers(), './src/html/helpers/custom-helpers.js']
+    })
   ]
 }
