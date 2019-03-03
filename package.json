@@ -19,29 +19,22 @@
     "url": "https://github.com/shawnthompson/artisankitchenandbath/issues"
   },
   "homepage": "https://github.com/shawnthompson/artisankitchenandbath#readme",
-  "devDependencies": {
-    "assemble-webpack": "^3.1.2",
-    "assemble-webpack-loader": "^0.1.0",
-    "clean-webpack-plugin": "^1.0.1",
-    "copy-webpack-plugin": "^4.6.0",
-    "css-loader": "^2.1.0",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^3.0.1",
-    "handlebars-helpers": "^0.10.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.11.0",
-    "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-merge": "^4.2.1"
-  },
   "dependencies": {
-    "bootstrap": "^4.2.1",
-    "jquery": "^3.3.1",
-    "jquery.easing": "^1.4.1",
-    "popper.js": "^1.14.6"
+    "@fortawesome/fontawesome-free": "5.7.0",
+    "bootstrap": "4.2.1",
+    "del": "^3.0.0",
+    "jquery": "3.3.1",
+    "jquery.easing": "^1.4.1"
+  },
+  "devDependencies": {
+    "browser-sync": "2.26.3",
+    "gulp": "4.0.0",
+    "gulp-autoprefixer": "6.0.0",
+    "gulp-clean-css": "4.0.0",
+    "gulp-header": "2.0.7",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-uglify": "3.0.1"
   }
 }

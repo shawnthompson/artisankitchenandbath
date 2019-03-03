@@ -1,0 +1,15 @@
+// Clients Aside
+
+aside.clients {
+
+	overflow: hidden;
+	overflow-y: auto;
+
+    img {
+        margin: 50px auto;
+    }
+
+    .dark {
+        background-color: #000;
+    }
+}
