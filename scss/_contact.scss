@@ -1,9 +1,6 @@
 // Styling for the contact section
 section#contact {
   background-color: $gray-900;
-  background-image: url('../img/map-image.png');
-  background-repeat: no-repeat;
-  background-position: center;
   .section-heading {
     color: $white;
   }
@@ -43,5 +40,8 @@ section#contact {
     font-weight: 700;
     color: $gray-400;
     @include heading-font;
+  }
+  .fa { 
+    margin-right: $icon-space;
   }
 }

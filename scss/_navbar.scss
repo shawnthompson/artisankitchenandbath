@@ -12,13 +12,14 @@
     @include heading-font;
   }
   .navbar-brand {
-    color: $primary;
+    color: lighten( $primary, 25% );
+    text-shadow: 1px 1px #fff;
     @include script-font;
     &.active,
     &:active,
     &:focus,
     &:hover {
-      color: darken($primary, 10%);
+      color: lighten( $primary, 5% );
     }
   }
   .navbar-nav {
@@ -32,7 +33,7 @@
         @include heading-font;
         &.active,
         &:hover {
-          color: $primary;
+          color: lighten( $primary, 25% );
         }
       }
     }
@@ -46,7 +47,7 @@
     -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
-    background-color: transparent;
+    background-color: rgba( $gray-900, .7 );
     .navbar-brand {
       font-size: 1.75em;
       -webkit-transition: all 0.3s;
@@ -63,7 +64,7 @@
     &.navbar-shrink {
       padding-top: 0;
       padding-bottom: 0;
-      background-color: $gray-900;
+      background-color: $gray-800;
       .navbar-brand {
         font-size: 1.25em;
         padding: 12px 0;

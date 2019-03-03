@@ -14,6 +14,9 @@ footer {
     margin-bottom: 0;
     text-transform: none;
     @include heading-font;
+    .fa {
+      margin-right: $icon-space;
+    }
   }
 }
 
