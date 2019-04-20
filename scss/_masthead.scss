@@ -11,6 +11,11 @@ header {
   color: black;
   .intro-text {
 
+    h1 {
+      color: #fff;
+      background-color: #000;
+    }
+
     padding-top: 100px;
     padding-bottom: 50px;
     .intro-lead-in {
@@ -24,6 +29,12 @@ header {
 
         img {
             display: inline;
+        }
+
+        .description {
+          display: block;
+          font-size: .6em;
+          margin-top: 20px;
         }
     }
     .intro-heading {

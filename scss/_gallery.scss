@@ -1,0 +1,49 @@
+// Gallery styles
+
+#gallery {
+
+    .row {
+        position: relative;
+        
+        img {
+            opacity: .85;
+        }
+          
+        .img-fluid {
+            width: 100%;
+            height: auto;
+        }
+          
+        .img-overlay {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            text-align: center;
+        }
+          
+        .img-overlay:before {
+            content: ' ';
+            display: block;
+            /* adjust 'height' to position overlay content vertically */
+            height: 50%;
+        }
+
+        .btn {
+            padding: 30px;
+            font-size: 200%;
+            background-color: rgba($color: #333, $alpha: .6);
+            border: solid #000 3px;
+            color: #000;
+
+            &:hover {
+                background-color: rgba($color: #333, $alpha: .9);
+                border: solid 4px;
+                color: #fff;
+            }
+            
+            .fas {
+                padding-right: 10px;
+            }
+        }
+    }
+}
