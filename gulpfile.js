@@ -11,6 +11,7 @@ const uglify = require("gulp-uglify");
 const pkg = require("./package.json");
 const del = require("del");
 const imageResize = require('gulp-image-resize');
+const ghPages = require('gulp-gh-pages');
 
 // Set the banner content
 const banner = ['/*!\n',
@@ -168,6 +169,17 @@ function browserSyncReload(done) {
   browsersync.reload();
   done();
 }
+
+// Deploy gh-pages
+gulp.task('deploy', function(cb) {
+  gulp.src('./dist/**/*')
+    .pipe(ghPages({
+      options : {
+        push: false
+      }
+    }));
+    cb();
+});
 
 // Watch files
 function watchFiles() {
