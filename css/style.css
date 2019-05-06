@@ -594,6 +594,7 @@ header .intro-text .intro-heading {
 
 #gallery .row {
   position: relative;
+  display: block;
 }
 
 #gallery .row img {
