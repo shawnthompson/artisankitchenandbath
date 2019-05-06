@@ -10,6 +10,7 @@ const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const pkg = require("./package.json");
 const del = require("del");
+const imageResize = require('gulp-image-resize');
 
 // Set the banner content
 const banner = ['/*!\n',
@@ -64,13 +65,13 @@ gulp.task('copy', function(cb) {
 
   // HTML
   gulp.src([
-    './*.html'
+    './src/*.html'
   ])
   .pipe(gulp.dest('./dist'))
   
   // Images
   gulp.src([
-    './img/**/*.*'
+    './src/img/**/*.*'
   ])
   .pipe(gulp.dest('./dist/img'))
 
@@ -78,10 +79,37 @@ gulp.task('copy', function(cb) {
 
 });
 
-// CSS task
+// Image pipeline
+gulp.task('imagesLarge', function (cb) {
+  gulp.src('./src/galleries/**/*.jpg')
+  .pipe(imageResize({
+    width : 1900
+  }))
+  .pipe(gulp.dest('dist/img/'));
+  cb();
+});
+
+gulp.task('imagesThumbs', function (cb) {
+  gulp.src('./src/galleries/**/*.jpg')
+  .pipe(imageResize({
+    width : 1900,
+    height : 500,
+    crop : true,
+    quality: 0.3      
+  }))
+  .pipe(rename({
+    suffix: '-thumb'
+  }))
+  .pipe(gulp.dest('dist/img/'));
+  cb();
+});
+
+
+
+  // CSS task
 function css() {
   return gulp
-    .src("./scss/*.scss")
+    .src("./src/scss/*.scss")
     .pipe(plumber())
     .pipe(sass({
       outputStyle: "expanded"
@@ -107,7 +135,7 @@ function css() {
 function js() {
   return gulp
     .src([
-      './js/*.js'
+      './src/js/*.js'
     ])
     .pipe(uglify())
     .pipe(header(banner, {
@@ -123,6 +151,7 @@ function js() {
 // Tasks
 gulp.task("css", css);
 gulp.task("js", js);
+gulp.task("clean", clean)
 
 // BrowserSync
 function browserSync(done) {
@@ -142,12 +171,14 @@ function browserSyncReload(done) {
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./scss/**/*", css);
-  gulp.watch(["./js/**/*.js", "!./js/*.min.js"], js);
-  gulp.watch("./**/*.html", browserSyncReload);
+  gulp.watch("./src/scss/**/*", css);
+  gulp.watch(["./src/js/**/*.js", "!./js/*.min.js"], js);
+  gulp.watch("./src/*.html", browserSyncReload);
 }
 
-gulp.task("default", gulp.parallel('vendor', 'copy', css, js));
+gulp.task("images", gulp.parallel('imagesThumbs', 'imagesLarge'));
+
+gulp.task("default", gulp.series(clean, gulp.parallel('vendor', 'copy', css, js), 'images'));
 
 // dev task
 gulp.task("dev", gulp.parallel('default', watchFiles, browserSync));
