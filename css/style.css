@@ -592,9 +592,18 @@ header .intro-text .intro-heading {
   display: block !important;
 }
 
+.ekko-lightbox .modal-title {
+  display: none;
+}
+
+.ekko-lightbox .modal-header {
+  padding: 5px;
+}
+
 #gallery .row {
   position: relative;
   display: block;
+  border-top: solid 4px #000;
 }
 
 #gallery .row img {
@@ -613,6 +622,12 @@ header .intro-text .intro-heading {
   text-align: center;
 }
 
+@media screen and (max-width: 576px) {
+  #gallery .row .img-overlay {
+    bottom: 15px;
+  }
+}
+
 #gallery .row .img-overlay:before {
   content: ' ';
   display: block;
@@ -621,11 +636,18 @@ header .intro-text .intro-heading {
 }
 
 #gallery .row .btn {
-  padding: 30px;
-  font-size: 200%;
+  padding: 15px;
+  font-size: 150%;
   background-color: rgba(204, 204, 204, 0.6);
   border: solid #000 3px;
   color: #000;
+}
+
+@media screen and (max-width: 576px) {
+  #gallery .row .btn {
+    padding: 10px;
+    font-size: 75%;
+  }
 }
 
 #gallery .row .btn:hover {
