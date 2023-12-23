@@ -1,5 +1,4 @@
 const { watch, src, dest, parallel, series } = require('gulp');
-// const gulp = require("gulp");
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -8,6 +7,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const del = require("del");
 const imageResize = require('gulp-image-resize');
 const rename = require("gulp-rename");
+const { spawn } = require('child_process');
 
 // Clean _site
 function clean() {
@@ -19,46 +19,59 @@ function clean() {
 // apt-get install graphicsmagick
 
 function imagesLarge() {
-return src('./src/_raw-images/galleries/**/*.jpg')
-  .pipe(imageResize({
-    width : 1900
-  }))
-  .pipe(dest('./src/img/galleries/'));
-};
+  return src('./src/_raw-images/galleries/**/*.jpg')
+    .pipe(imageResize({
+      width : 1900
+    }))
+    .pipe(dest('./src/img/galleries/'));
+}
 
 function imagesThumbs() {
-return src('./src/_raw-images/galleries/**/*.jpg')
-  .pipe(imageResize({
-    width : 1900,
-    height : 500,
-    crop : true,
-    quality: 0.3      
-  }))
-  .pipe(rename({
-    suffix: '-thumb'
-  }))
-  .pipe(dest('./src/img/galleries/'));
-};
+  return src('./src/_raw-images/galleries/**/*.jpg')
+    .pipe(imageResize({
+      width : 1900,
+      height : 500,
+      crop : true,
+      quality: 0.3      
+    }))
+    .pipe(rename({
+      suffix: '-thumb'
+    }))
+    .pipe(dest('./src/img/galleries/'));
+}
 
 function cssTask() {
-return src('./src/scss/style.scss', { allowEmpty: true })
+  return src('./src/scss/style.scss', { allowEmpty: true })
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed'})).on('error', sass.logError)
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('./_site/css'))
-};
+    .pipe(dest('./_site/css'));
+}
 
 function watchFiles() {
-watch('./**/*.scss', parallel(cssTask));
-};
+  watch('./**/*.scss', parallel(cssTask));
+}
+
+// Execute the Node.js script
+function runImageScript(cb) {
+  const script = spawn('node', ['generateImages.js']);
+
+  script.stdout.on('data', data => {
+    console.log(`stdout: ${data}`);
+  });
+
+  script.stderr.on('data', data => {
+    console.error(`stderr: ${data}`);
+  });
+
+  script.on('close', code => {
+    console.log(`Script process exited with code ${code}`);
+    cb(code === 0 ? null : 'Error occurred during script execution');
+  });
+}
 
 // Tasks
 exports.clean = clean;
-
-exports.images = parallel(imagesThumbs, imagesLarge);
-
-exports.default = series(
-	clean,
-	parallel(cssTask),
-);
+exports.images = series(parallel(imagesThumbs, imagesLarge), runImageScript);
+exports.default = series(clean, parallel(cssTask));
