@@ -51,13 +51,13 @@ home: true
         <div class="row">
 
             <div class="col-md-4 col-sm-6 portfolio-item">
-              <a class="portfolio-link" href="/traditional/index.html">
+              <a class="portfolio-link" href="{{ settings.baseUrl }}traditional">
                 <div class="portfolio-hover">
                   <div class="portfolio-hover-content">
                     <i class="fas fa-plus fa-3x"></i>
                   </div>
                 </div>
-                <img class="img-fluid" src="./img/portfolio/traditional.jpg" alt="">
+                <img class="img-fluid" src="{{ settings.baseUrl }}img/portfolio/traditional.jpg" alt="">
               </a>
               <div class="portfolio-caption">
                 <h4>Traditional</h4>
@@ -76,13 +76,13 @@ home: true
             </div>
  
             <div class="col-md-4 col-sm-6 portfolio-item">
-              <a class="portfolio-link" data-toggle="modal" href="#./transitional.html">
+              <a class="portfolio-link" data-toggle="modal" href="{{ settings.baseUrl }}transitional">
                 <div class="portfolio-hover">
                   <div class="portfolio-hover-content">
                     <i class="fas fa-plus fa-3x"></i>
                   </div>
                 </div>
-                <img class="img-fluid" src="./img/portfolio/transitional.jpg" alt="">
+                <img class="img-fluid" src="{{ settings.baseUrl }}img/portfolio/transitional.jpg" alt="">
               </a>
               <div class="portfolio-caption">
                 <h4>Transitional</h4>
@@ -92,13 +92,13 @@ home: true
  
  
             <div class="col-md-4 col-sm-6 portfolio-item">
-              <a class="portfolio-link" data-toggle="modal" href="./contemporary.html">
+              <a class="portfolio-link" data-toggle="modal" href="{{ settings.baseUrl }}contemporary">
                 <div class="portfolio-hover">
                   <div class="portfolio-hover-content">
                     <i class="fas fa-plus fa-3x"></i>
                   </div>
                 </div>
-                <img class="img-fluid" src="./img/portfolio/contemporary.jpg" alt="">
+                <img class="img-fluid" src="{{ settings.baseUrl }}img/portfolio/contemporary.jpg" alt="">
               </a>
               <div class="portfolio-caption">
                 <h4>Contemporary</h4>
@@ -134,7 +134,7 @@ home: true
             <div class="col-lg-12 text-center banner">
                 <h2 class="section-heading">Bathrooms</h2>
                 <p class="section-subheading text-muted">A well designed bathroom should complement the style and feel of the home.</p>
-                <p class="btn btn-primary btn-xl text-uppercase">Samples</p>
+                <p><a class="btn btn-primary btn-xl text-uppercase" href="{{ settings.baseUrl }}bathrooms">Samples</a></p>
             </div>
         </div>
    </div>
@@ -152,7 +152,7 @@ home: true
         <div class="row">
             <div class="col-sm-6 portfolio-item">
                 <span class="portfolio-link">
-                    <img src="./img/granite/stone-granite.jpg" class="img-fluid" alt="">
+                    <img src="{{ settings.baseUrl }}img/granite/stone-granite.jpg" class="img-fluid" alt="">
                 </span>
                 <div class="portfolio-caption">
                     <h4>Granite</h4>
@@ -168,7 +168,7 @@ home: true
             </div>
             <div class="col-sm-6 portfolio-item">
                 <span class="portfolio-link">
-                    <img src="./img/granite/stone-quartzite.jpg" class="img-fluid" alt="">
+                    <img src="{{ settings.baseUrl }}img/granite/stone-quartzite.jpg" class="img-fluid" alt="">
                 </span>
                 <div class="portfolio-caption">
                     <h4>Quartzite</h4>
@@ -183,7 +183,7 @@ home: true
             </div>
             <div class="col-sm-6 portfolio-item">
                 <span class="portfolio-link">
-                    <img src="./img/granite/stone-marble.jpg" class="img-fluid" alt="">
+                    <img src="{{ settings.baseUrl }}img/granite/stone-marble.jpg" class="img-fluid" alt="">
                 </span>
                 <div class="portfolio-caption">
                     <h4>Marble</h4>
@@ -198,7 +198,7 @@ home: true
             </div>
             <div class="col-sm-6 portfolio-item">
                 <span class="portfolio-link">
-                    <img src="./img/granite/stone-quartz.jpg" class="img-fluid" alt="">
+                    <img src="{{ settings.baseUrl }}img/granite/stone-quartz.jpg" class="img-fluid" alt="">
                 </span>
                 <div class="portfolio-caption">
                     <h4>Quartz</h4>
