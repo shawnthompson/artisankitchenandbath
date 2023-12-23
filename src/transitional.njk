@@ -1,0 +1,25 @@
+---
+title: Transitional kitchens
+description: Offering the best of both worlds, transitional kitchens include elements of both traditional and contemporary design equating to a classic look. Eclectic in nature, they mix natural and man-made materials as well as finishes and textures. Subtle accents draw the eye, adding flair without going overboard.
+layout: layouts/base.njk
+gallery: transitional
+itemNumber: 14
+---
+  <!-- <div class="row">
+        <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+            <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid rounded">
+          </a>
+  </div> -->
+
+<div id="gallery">
+	{% for i in range(itemNumber) %}
+	<div class="row">
+		<img src="{{ settings.baseUrl }}img/galleries/{{ gallery }}/{{ gallery }}{{ i + 1 }}-thumb.jpg" class="img-fluid" alt="">
+		<div class="img-overlay">
+			<a href="{{ settings.baseUrl }}img/galleries/{{ gallery }}/{{ gallery }}{{ i + 1 }}.jpg" class="btn btn-secondary" data-toggle="lightbox" data-gallery="gallery">
+				<i class="fas fa-search-plus"></i>View full size
+			</a>
+		</div>
+	</div>
+	{% endfor %}
+</div>
