@@ -14,10 +14,13 @@
 <header>
 	<div class="intro-text">
 		<h1 {% if home %} class="sr-only"{% endif %}>{{ title }}</h1>
-			<p class="intro-lead-in">
-				<img class="img-fluid" src="{{ settings.baseUrl }}img/logos/artisan.png" alt="Artisan Kitchen and Bath logo">
-				<span class="description">{{ description }}</span>
-			</p>
-			{% if home %}<p><a href="#services" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Services</a></p>{% endif %}
+		<p class="intro-lead-in">
+			<img class="img-fluid" src="{{ settings.baseUrl }}img/logos/artisan.png" alt="Artisan Kitchen and Bath logo">
+			<span class="description">{{ description }}</span>
+		</p>
+		{% if home %}<p><a href="#services" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Services</a></p>{% endif %}
+		{% if type === "kitchen" %}
+			{% include "partials/nav-kitchen.njk" %}
+		{% endif %}
 	</div>
 </header>
