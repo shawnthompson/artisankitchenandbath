@@ -1,0 +1,8 @@
+<nav class="kitchen-nav">
+	<ul class="nav nav-pills nav-fill">
+		{% for kitchen in kitchens %}
+		{% set kitchenURL = settings.baseUrl + kitchen | lower + "/" %}
+			<li class="nav-item {% if page.url === kitchenURL %} active{% endif %}"><a class="nav-link"{% if page.url != kitchenURL %} href="{{ kitchenURL }}"{% endif %}>{{ kitchen }}</a></li>
+		{% endfor %}
+	</ul>
+</nav>

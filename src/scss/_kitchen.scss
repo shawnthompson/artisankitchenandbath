@@ -1,0 +1,16 @@
+.kitchen-nav {
+	background-color: rgba($color: #fff, $alpha: 1);
+
+	li {
+		border: solid 2px black;
+
+		&.active {
+			background-color: #864337;
+
+			a {
+				color: #fff;
+			}
+		}
+	}
+
+}
