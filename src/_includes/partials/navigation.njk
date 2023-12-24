@@ -12,10 +12,10 @@
 					<a class="nav-link js-scroll-trigger" href="{{ settings.baseUrl }}index.html#services">Services</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="{{ settings.baseUrl }}index.html#kitchens">Kitchens</a>
+					<a class="nav-link js-scroll-trigger{% if type === "kitchen" %} active{% endif %}" href="{{ settings.baseUrl }}index.html#kitchens">Kitchens</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="{{ settings.baseUrl }}index.html#bathrooms">Bathroom</a>
+					<a class="nav-link js-scroll-trigger{% if gallery === "bathroom" %} active{% endif %}" href="{{ settings.baseUrl }}index.html#bathrooms">Bathroom</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="{{ settings.baseUrl }}index.html#counters">Counters & Backsplashes</a>
@@ -27,3 +27,4 @@
 		</div>
 	</div>
 </nav>
+{% if gallery === "bathroom" %}{% endif %}
