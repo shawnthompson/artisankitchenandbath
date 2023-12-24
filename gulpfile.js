@@ -74,5 +74,8 @@ function runImageScript(cb) {
 // Tasks
 exports.clean = clean;
 exports.watch = watchFiles;
+exports.build = series(cssTask);
 exports.images = series(parallel(imagesThumbs, imagesLarge), runImageScript);
-exports.default = series(clean, parallel(cssTask));
+exports.start = series(clean, parallel(cssTask));
+exports.sass = parallel(cssTask, watchFiles);
+exports.default = series(clean, parallel(imagesThumbs, imagesLarge), runImageScript, cssTask, watchFiles);

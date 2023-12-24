@@ -6,11 +6,14 @@
   "main": "index.js",
   "scripts": {
 	"gulp": "npx gulp",
-	"eleventy": "npx eleventy --serve",
-	"watch:eleventy": "eleventy",
+	"clean": "npx gulp clean",
+	"gulp-build": "npx gulp build",
+	"eleventy": "npx eleventy",
+	"watch:eleventy": "eleventy --serve",
+	"watch:sass": "npx gulp sass",
 	"images" : "npm-run-all npx gulp images",
-    "start": "npm-run-all gulp eleventy",
-	"build": "npm-run-all eleventy"
+    "start": "npm-run-all clean --parallel watch:*",
+	"build": "npm-run-all gulp-build eleventy"
   },
   "repository": {
     "type": "git",
