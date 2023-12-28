@@ -8,6 +8,7 @@
 
     .row {
         position: relative;
+		margin-top: 5px;
         
         img {
             opacity: .85;
@@ -23,6 +24,11 @@
             bottom: 25px;
             right: 25px;
             text-align: center;
+
+		@media (max-width: 576px) {
+				bottom: 15px;
+				right: 15px;
+			}
         }
           
         .img-overlay:before {
@@ -35,7 +41,7 @@
         .btn {
             padding: 30px;
             font-size: 200%;
-            background-color: rgba($color: #ccc, $alpha: .6);
+            background-color: rgba($color: #ccc, $alpha: .75);
             border: solid #000 3px;
             color: #000;
 
@@ -48,6 +54,11 @@
             .fas {
                 padding-right: 10px;
             }
+
+			@media (max-width: 576px) {
+				font-size: 100%;
+				padding: 15px;
+			}
         }
     }
 }
