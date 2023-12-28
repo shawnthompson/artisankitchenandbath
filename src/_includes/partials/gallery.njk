@@ -4,7 +4,7 @@
           </a>
   </div> -->
 
-<div id="gallery">
+<div id="gallery" class="container-fluid">
 	{% for image in images[gallery] %}
 	<div class="row">
 		<img src="{{ settings.baseUrl }}img/galleries/{{ gallery }}/{{ image.name }}-thumb.jpg" class="img-fluid" alt="{{ image.alt }}">

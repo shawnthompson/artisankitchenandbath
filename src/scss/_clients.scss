@@ -1,15 +1,11 @@
 // Clients Aside
-
 aside.clients {
 
-	overflow: hidden;
-	overflow-y: auto;
+	.img-fluid {
+		margin: 50px 0;
+	}
 
-    img {
-        margin: 50px auto;
-    }
-
-    .dark {
-        background-color: #000;
-    }
+	.dark {
+		background-color: #000;
+	}
 }
