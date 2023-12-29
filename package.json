@@ -5,15 +5,15 @@
   "description": "Source code using Webpack for https://artisankitchenandbath.ca/",
   "main": "index.js",
   "scripts": {
-	"gulp": "npx gulp",
-	"clean": "npx gulp clean",
-	"gulp-build": "npx gulp build",
-	"eleventy": "npx eleventy",
-	"watch:eleventy": "eleventy --serve",
-	"watch:sass": "npx gulp sass",
-	"images" : "npm-run-all npx gulp images",
+    "gulp": "npx gulp",
+    "clean": "npx gulp clean",
+    "gulp-build": "npx gulp build",
+    "eleventy": "npx eleventy",
+    "watch:eleventy": "eleventy --serve",
+    "watch:sass": "npx gulp sass",
+    "images": "npm-run-all npx gulp images",
     "start": "npm-run-all clean --parallel watch:*",
-	"build": "npm-run-all gulp-build eleventy"
+    "build": "npm-run-all gulp-build eleventy"
   },
   "repository": {
     "type": "git",
