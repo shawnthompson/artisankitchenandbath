@@ -11,7 +11,7 @@
     "eleventy": "npx eleventy",
     "watch:eleventy": "eleventy --serve",
     "watch:sass": "npx gulp sass",
-    "images": "npm-run-all npx gulp images",
+    "images": "npx gulp images",
     "start": "npm-run-all clean --parallel watch:*",
     "build": "npm-run-all gulp-build eleventy"
   },

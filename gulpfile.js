@@ -21,7 +21,7 @@ function clean() {
 function imagesLarge() {
   return src('./src/_raw-images/galleries/**/*.jpg')
     .pipe(imageResize({
-      width : 1900
+      width : 2400
     }))
     .pipe(dest('./src/img/galleries/'));
 }
@@ -29,7 +29,7 @@ function imagesLarge() {
 function imagesThumbs() {
   return src('./src/_raw-images/galleries/**/*.jpg')
     .pipe(imageResize({
-      width : 1900,
+      width : 2400,
       height : 500,
       crop : true,
       quality: 0.3      
