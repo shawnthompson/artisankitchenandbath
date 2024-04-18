@@ -2,10 +2,10 @@
 <html lang="en">
 {% include "partials/head.njk" %}
 	<body id="page-top">
-{% include "partials/navigation.njk" %}
 {% include "partials/header.njk" %}
 
 <main>
+	{% include "partials/hero.njk" %}
 	{{ content | safe }}
 </main>
 
