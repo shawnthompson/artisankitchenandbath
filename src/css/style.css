@@ -1,1 +1,12 @@
 /* Custom Styles */
+.nav-item {
+	margin-right: 20px;
+	/* Adjust as needed */
+}
+
+.nav-item:not(:first-child) {
+	border-left: 1px solid #000;
+	/* Adjust color as needed */
+	padding-left: 20px;
+	/* Adjust as needed */
+}

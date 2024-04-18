@@ -1,15 +1,29 @@
 <!-- Navigation -->
-<nav class="navbar" aria-label="main navigation">
-	<div class="navbar-brand">
-		<a class="navbar-item" href="{{ settings.baseUrl }}index.html#page-top">Artisan Kitchen and Bath</a>
-		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a>
-	</div>
-	<div id="navbarBasicExample" class="navbar-menu">
-		<div class="navbar-end">
-			<a class="navbar-item" href="{{ settings.baseUrl }}index.html#services">Services</a>
-			<a class="navbar-item" href="{{ settings.baseUrl }}index.html#kitchens">Portfolio</a>
-			<a class="navbar-item" href="{{ settings.baseUrl }}index.html#bathrooms">About Us</a>
-			<a class="navbar-item" href="#contact">Contact Us</a>
+<nav class="navbar navbar-expand-sm" id="mainNav">
+	<a class="navbar-brand" href="{{ settings.baseUrl }}index.html#page-top">
+		<img class="img-fluid" src="/img/logos/artisan.png" width="300px" alt="Artisan Kitchen and Bath logo">
+		<span class="visually-hidden">Artisan Kitchen and Bath</span>
+	</a>
+	<div class="container d-flex justify-content-between">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			Menu
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ms-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ settings.baseUrl }}index.html#services">Services</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ settings.baseUrl }}index.html#kitchens">Portfolio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ settings.baseUrl }}index.html#bathrooms">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#contact">Contact Us</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 </nav>
