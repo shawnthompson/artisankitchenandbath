@@ -5,15 +5,9 @@
   "description": "Source code using Webpack for https://artisankitchenandbath.ca/",
   "main": "index.js",
   "scripts": {
-    "gulp": "npx gulp",
-    "clean": "npx gulp clean",
-    "gulp-build": "npx gulp build",
     "eleventy": "npx eleventy",
-    "watch:eleventy": "eleventy --serve",
-    "watch:sass": "npx gulp sass",
-    "images": "npx gulp images",
-    "start": "npm-run-all clean --parallel watch:*",
-    "build": "npm-run-all gulp-build eleventy"
+    "start": "eleventy --serve",
+    "build": "eleventy"
   },
   "repository": {
     "type": "git",
@@ -35,17 +29,6 @@
     "popper.js": "^1.15.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "autoprefixer": "^10.4.16",
-    "cssnano": "^6.0.2",
-    "gulp": "^4.0.2",
-    "gulp-image-resize": "^0.13.0",
-    "gulp-postcss": "^9.0.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.32",
-    "sass": "^1.32.12"
+    "@11ty/eleventy": "^2.0.1"
   }
 }
