@@ -10,3 +10,32 @@
 	padding-left: 20px;
 	/* Adjust as needed */
 }
+
+/* steps */
+.steps ol {
+	list-style-position: inside;
+	padding-left: 5px;
+}
+
+.steps ol li {
+	position: relative;
+	padding-left: 2em;
+	border: 1px solid #000;
+	box-sizing: border-box;
+	margin: 10px;
+	padding: 15px;
+	background-color: #333;
+	/* Dark grey background */
+	color: #fff;
+	/* White text */
+}
+
+.steps ol li i {
+	color: #fff;
+	/* White icons */
+}
+
+.steps ol li::before {
+	position: absolute;
+	left: 0;
+}
