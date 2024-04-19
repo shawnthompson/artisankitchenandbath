@@ -11,6 +11,12 @@
 	/* Adjust as needed */
 }
 
+section {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	padding-top: 100px;
+	padding-bottom: 100px;}
+
 /* steps */
 .steps ol {
 	list-style-position: inside;
@@ -24,18 +30,38 @@
 	box-sizing: border-box;
 	margin: 10px;
 	padding: 15px;
-	background-color: #333;
+	background-color: #fff;
 	/* Dark grey background */
-	color: #fff;
+	color: #000;
 	/* White text */
 }
 
 .steps ol li i {
-	color: #fff;
+	color: #000;
 	/* White icons */
 }
 
 .steps ol li::before {
 	position: absolute;
 	left: 0;
+}
+
+blockquote {
+	position: relative;
+	padding-left: 10px;
+}
+
+blockquote::before {
+	content: "\201C";
+	font-size: 3em;
+	position: absolute;
+	left: -20px;
+	top: -20px;
+	color: #ccc;
+	/* Adjust color as needed */
+}
+
+footer.blockquote-footer {
+	color: rgb(255, 235, 59);
+	/* Light yellow text */
 }
