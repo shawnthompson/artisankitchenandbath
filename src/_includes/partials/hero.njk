@@ -14,25 +14,6 @@
 	</div>
 </section>
 
-<p class="text-center my-5 display-1">OR</p>
-
-<section class="px-4 py-2 mt-2">
-	<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-		<div class="col-12 col-lg-6">
-			<img src="{{ settings.baseUrl }}img/{{ image.src }}" class="d-block mx-lg-auto img-fluid" alt="{{ image.alt }}">
-		</div>
-		<div class="col-lg-6">
-			<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ title }}</h1>
-			<p class="lead">{{ description }}</p>
-			{% if button %}
-			<div class="d-grid gap-2">
-				<a href="{{ button.link }}" class="btn btn-secondary btn-lg px-4 me-md-2 btn-block">{{ button.text }}</a>
-			</div>
-			{% endif %}
-		</div>
-	</div>
-</section>
-
 {% else %}
 	
 	<div class="container">
