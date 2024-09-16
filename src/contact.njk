@@ -4,7 +4,7 @@ description: We'd love to hear from you! On our Contact Us page, you'll find all
 layout: layouts/base.njk
 ---
 
-<form class="container mt-5" data-netlify="true" netlify-honeypot="bot-field" name="contact" method="post">
+<form class="container mt-5" data-netlify="true" netlify-honeypot="bot-field" name="contact" method="post" action="{{ settings.baseUrl }}thanks/">
 	<input type="hidden" name="subject" value="ArtisanKitchenAndBath.ca - Inquiry from %{formName}" />
 	<div class="mb-5">
 		<label for="firstName">First Name <strong>(required)</strong></label>
