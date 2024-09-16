@@ -5,7 +5,9 @@ layout: layouts/base.njk
 ---
 
 <form class="container mt-5" data-netlify="true" netlify-honeypot="bot-field" name="contact" method="post" action="{{ settings.baseUrl }}thanks/">
-	<input type="hidden" name="subject" value="ArtisanKitchenAndBath.ca - Inquiry from %{formName}" />
+	{% raw %}
+	<input type="hidden" name="subject" value="ArtisanKitchenAndBath.ca - Inquiry from {{firstName}} {{lastName}} at {{email}} " />
+	{% endraw %}
 	<div class="mb-5">
 		<label for="firstName">First Name <strong>(required)</strong></label>
 		<input type="text" class="form-control" id="firstName" name="firstName" required>
@@ -21,19 +23,19 @@ layout: layouts/base.njk
 	<fieldset class="mb-5">
 		<legend>How did you hear about us?</legend>
 		<div class="form-check">
-			<input class="form-check-input" type="checkbox" id="onlineSearch" name="onlineSearch" value="Online Search">
+			<input class="form-check-input" type="checkbox" id="onlineSearch" name="onlineSearch" value="Online Search (selected)">
 			<label class="form-check-label" for="onlineSearch">Online Search</label>
 		</div>
 		<div class="form-check">
-			<input class="form-check-input" type="checkbox" id="socialMedia" name="socialMedia" value="Instagram / Facebook">
+			<input class="form-check-input" type="checkbox" id="socialMedia" name="socialMedia" value="Instagram / Facebook (selected)">
 			<label class="form-check-label" for="socialMedia"><a href="https://www.instagram.com/artisankitchenandbath18255/">Instagram</a> / <a href="https://www.facebook.com/ArtisanWoodDesigns">Facebook</a></label>
 		</div>
 		<div class="form-check">
-			<input class="form-check-input" type="checkbox" id="referral" name="referral" value="From a friend or family member">
+			<input class="form-check-input" type="checkbox" id="referral" name="referral" value="From a friend or family member (selected)">
 			<label class="form-check-label" for="referral">From a friend or family member</label>
 		</div>
 		<div class="form-check">
-			<input class="form-check-input" type="checkbox" id="localAd" name="localAd" value="Local Advertisement">
+			<input class="form-check-input" type="checkbox" id="localAd" name="localAd" value="Local Advertisement (selected)">
 			<label class="form-check-label" for="localAd">Local Advertisement</label>
 		</div>
 	</fieldset>
