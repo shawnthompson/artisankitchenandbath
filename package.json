@@ -22,7 +22,7 @@
   "homepage": "https://github.com/shawnthompson/artisankitchenandbath#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.7.0",
-    "bootstrap": "^4.6.2",
+    "bootstrap": "^5.3.6",
     "del": "^3.0.0",
     "jquery": "^3.5.0",
     "jquery.easing": "^1.4.1",
