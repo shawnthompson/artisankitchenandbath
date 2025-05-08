@@ -18,6 +18,17 @@ a.border:focus {
 	transition: border-color 0.3s ease;
 }
 
+a.btn-secondary {
+	background-color: #5BC0BE;
+	color: #FFF;
+}
+
+a.btn-secondary:hover,
+a.btn-secondary:focus {
+	background-color: #FFC107;
+	color: #000;
+}
+
 .nav-item .nav-link {
 	color: #000;
 }
