@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-sm" id="mainNav">
-	<a class="navbar-brand" href="{{ settings.baseUrl }}">
+	<a class="navbar-brand mx-4" href="{{ settings.baseUrl }}">
 		<img class="img-fluid" src="/img/logos/artisan.png" width="300px" alt="Artisan Kitchen and Bath logo">
 		<span class="visually-hidden">Artisan Kitchen and Bath</span>
 	</a>
@@ -11,18 +11,16 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ms-auto">
+				{% for item in ["services", "portfolio", "about", "contact"] %}
 				<li class="nav-item">
-					<a class="nav-link" href="{{ settings.baseUrl }}services">Services</a>
+					<a
+					   class="nav-link{% if label == item %} active{% endif %}"
+					   {% if label !=item %}href="{{ settings.baseUrl }}{{ item }}" {% endif %}
+					   {% if label==item %}aria-current="true" {% endif %}>
+						{{ item | capitalize }}{% if item == "about" %} Us{% elif item == "contact" %} Us{% endif %}
+					</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ settings.baseUrl }}portfolio">Portfolio</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ settings.baseUrl }}about">About Us</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ settings.baseUrl }}contact">Contact Us</a>
-				</li>
+				{% endfor %}
 			</ul>
 		</div>
 	</div>

@@ -2,6 +2,7 @@
 title: Services
 description: Artisan Kitchen and Bath offers personalized service from design, production and installation. We hold ourselves to the highest standards of craftsmanship, creativity and professionalism. Whether you are planning a new home or remodeling your present home, the exceptional quality and elegance of our work will enhance both its beauty and its value.
 layout: layouts/base.njk
+label: services
 image:
   src: services.jpg
   alt: A contemporary kitchen with white cabinetry, a marble waterfall island with black stools, stainless steel appliances, and pendant lighting.
@@ -33,7 +34,7 @@ image:
 			</section>
 			<section class="my-5 col-md-4">
 				<i aria-hidden="true" class="fas fa-toolbox fa-4x px-3"></i>
-				<h3 class="my-4">5. Install</h3>
+				<h3 class="my-4">5. Installing</h3>
 				<p>Your project will come to life with the help of our skilled installers.</p>
 			</section>
 		</div>
@@ -49,16 +50,22 @@ image:
 		<div class="container">
 			<h3 class="mb-5 fs-1">Cabinetry</h3>
 			<div class="row pb-5">
-				<div class="col-sm-6 d-flex justify-content-center">
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
 					<a href="https://www.miralis.com/" class="border border-light border-3">
 						<img src="{{ settings.baseUrl }}img/logos/miralis_dark.jpg" class="img-fluid" alt="">
 						<span class="visually-hidden">Miralis</span>
 					</a>
 				</div>
-				<div class="col-sm-6 d-flex justify-content-center">
-					<a href="http://elmwoodkitchens.com/" class="border border-light border-3">
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
+					<a href="https://elmwoodcabinets.com/project/natural-elegance-in-a-contemporary-kitchen/" class="border border-light border-3">
 						<img src="{{ settings.baseUrl }}img/logos/elmwood.png" class="img-fluid" alt="">
-						<span class="visually-hidden">Elmwood - Fine custom cabinetry</span>
+						<span class="visually-hidden">Elmwood</span>
+					</a>
+				</div>
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
+					<a href="https://cabico.com/en/" class="border border-light border-3">
+						<img src="{{ settings.baseUrl }}img/logos/cabico.png" class="img-fluid" alt="">
+						<span class="visually-hidden">Cabico</span>
 					</a>
 				</div>
 			</div>
@@ -68,19 +75,19 @@ image:
 		<div class="container">
 			<h3 class="mb-5 fs-1">Countertops</h3>
 			<div class="row pb-5">
-				<div class="col-sm-4 d-flex justify-content-center">
-					<a href="http://urbanquarry.ca/en" class="border border-dark border-3">
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
+					<a href="https://urbanquarry.ca/our-products/" class="border border-dark border-3">
 						<img src="{{ settings.baseUrl }}img/logos/urban-quarry.png" class="img-fluid" alt="">
 						<span class="visually-hidden">Urban Quarry</span>
 					</a>
 				</div>
-				<div class="col-sm-4 d-flex justify-content-center">
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
 					<a href="https://www.masterpiecegranite.com" class="border border-dark border-3">
 						<img src="{{ settings.baseUrl }}img/logos/masterpiece.png" class="img-fluid" alt="">
 						<span class="visually-hidden">Masterpiece Granite</span>
 					</a>
 				</div>
-				<div class="col-sm-4 d-flex justify-content-center">
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
 					<a href="https://interstone.ca" class="border border-dark border-3">
 						<img src="{{ settings.baseUrl }}img/logos/logo-interstone-main.jpg" class="img-fluid" alt="">
 						<span class="visually-hidden">Interstone Marble & Granite</span>
@@ -88,21 +95,21 @@ image:
 				</div>
 			</div>
 			<div class="row pb-5">
-				<div class="col-sm-4 d-flex justify-content-center">
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
 					<a href="https://www.cambriausa.com" class="border border-dark border-3">
 						<img src="{{ settings.baseUrl }}img/logos/cambria-logo-light_edited.webp" class="img-fluid" alt="">
 						<span class="visually-hidden">Cambria</span>
 					</a>
 				</div>
-				<div class="col-sm-4 d-flex justify-content-center">
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
 					<a href="https://www.cosentino.com/en-ca/kitchens/kitchen-countertops/" class="border border-dark border-3">
 						<img src="{{ settings.baseUrl }}img/logos/Cosentino.png" class="img-fluid" alt="">
 						<span class="visually-hidden">Cosentino</span>
 					</a>
 				</div>
-				<div class="col-sm-4 d-flex justify-content-center">
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
 					<a href="https://hanstone.ca/en/" class="border border-dark border-3">
-						<img src="{{ settings.baseUrl }}img/logos/hanstone-scaled.jpg" class="img-fluid" alt="">
+						<img src="{{ settings.baseUrl }}img/logos/hanstone.png" class="img-fluid" alt="">
 						<span class="visually-hidden">HanStone Canada</span>
 					</a>
 				</div>
@@ -111,18 +118,24 @@ image:
 	</section>
 	<section class="mt-5 bg-dark py-5 text-light">
 		<div class="container">
-			<h3 class="mb-5 fs-1">Hardware</h3>
+			<h3 class="mb-5 fs-1">Hardware & Tile Suppliers</h3>
 			<div class="row pb-5">
-				<div class="col-sm-6 d-flex justify-content-center">
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
 					<a href="https://www.richelieu.com/ca/en/" class="border border-light border-3">
-						<img src="{{ settings.baseUrl }}img/logos/Richelieu.gif" class="img-fluid" alt="">
+						<img src="{{ settings.baseUrl }}img/logos/Richelieu.png" class="img-fluid" alt="">
 						<span class="visually-hidden">Richelieu</span>
 					</a>
 				</div>
-				<div class="col-sm-6 d-flex justify-content-center">
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
 					<a href="https://www.berensonhardware.com" class="border border-light border-3">
-						<img src="{{ settings.baseUrl }}img/logos/Berenson.jpg" class="img-fluid" alt="">
+						<img src="{{ settings.baseUrl }}img/logos/Berenson.png" class="img-fluid" alt="">
 						<span class="visually-hidden">Berenson</span>
+					</a>
+				</div>
+				<div class="col-md-4 mt-3 d-flex justify-content-center">
+					<a href="https://eurotilestone.com" class="border border-light border-3">
+						<img src="{{ settings.baseUrl }}img/logos/EuroTileStone.png" class="img-fluid" alt="">
+						<span class="visually-hidden">Euro Tile & Stone</span>
 					</a>
 				</div>
 			</div>

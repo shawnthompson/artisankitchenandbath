@@ -5,7 +5,7 @@
 	<img class="img-fluid" src="{{ settings.baseUrl }}img/{{ image.src }}" alt="{{ image.alt }}">
 	<div class="container">
 		<h1 class="display-5 fw-bold text-body-emphasis lh-1 my-4">{{ title }}</h1>
-		<p class="lead">{{ description }}</p>
+		<p class="lead">{{ description | safe }}</p>
 		{% if button %}
 		<div class="d-grid gap-2 p-4">
 			<a href="{{ button.link }}" class="btn btn-secondary btn-lg px-5 me-md-2 btn-block">{{ button.text }}</a>
@@ -18,7 +18,7 @@
 	
 	<div class="container">
 		<h1 class="display-5 fw-bold text-body-emphasis lh-1 my-4">{{ title }}</h1>
-		<p class="lead">{{ description }}</p>
+		<p class="lead">{{ description | safe }} </p>
 	</div>
 
 {% endif %}

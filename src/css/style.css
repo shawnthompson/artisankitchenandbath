@@ -1,4 +1,43 @@
 /* Custom Styles */
+
+a,
+a:visited {
+	color: #5BC0BE;
+	text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+	color: #FFC107;
+	text-decoration: none;
+}
+
+a.border:hover,
+a.border:focus {
+	border-color: #FFC107 !important;
+	transition: border-color 0.3s ease;
+}
+
+.nav-item .nav-link {
+	color: #000;
+}
+
+.nav-item .nav-link:hover,
+.nav-item .nav-link:focus {
+	color: #8f6b00;
+	/* text-decoration: underline; */
+	border-top: #8f6b00 2px solid;
+	padding-top: 2px;
+	transition: ease-in-out 0.5s;
+}
+
+.nav-item .nav-link.active {
+	color: #8f6b00;
+	/* Light grey text */
+	border-top: #8f6b00 2px solid;
+	padding-top: 2px;
+}
+
 .nav-item {
 	margin-right: 20px;
 	/* Adjust as needed */
@@ -17,6 +56,11 @@ main > aside {
 	margin-bottom: 100px;
 	padding-top: 100px;
 	padding-bottom: 100px;
+}
+
+.lead strong {
+	color: rgb(255, 111, 1);
+	/* Dark grey text */
 }
 
 /* steps */
