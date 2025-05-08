@@ -5,22 +5,27 @@ layout: layouts/base.njk
 formScript: true
 ---
 
-<form class="container mt-5" data-netlify="true" netlify-honeypot="bot-field" name="contact" method="post" action="{{ settings.baseUrl }}thanks/">
-	{% raw %}
-	<input type="hidden" name="subject" value="" />
-	{% endraw %}
+<form class="container mt-5" novalidate data-netlify="true" netlify-honeypot="bot-field" name="contact" method="post" action="{{ settings.baseUrl }}thanks/">
+	<input type="hidden" name="subject" value="" /> <!-- subject will be set by JS -->
+
 	<div class="mb-5">
 		<label for="firstName">First Name <strong>(required)</strong></label>
-		<input type="text" class="form-control" id="firstName" name="firstName" required>
+		<input type="text" class="form-control" id="firstName" name="firstName" aria-required="true">
+		<span id="firstName-error" class="error-message" aria-live="polite"></span> <!-- Error message span -->
 	</div>
+
 	<div class="mb-5">
 		<label for="lastName">Last Name <strong>(required)</strong></label>
-		<input type="text" class="form-control" id="lastName" name="lastName" required>
+		<input type="text" class="form-control" id="lastName" name="lastName" aria-required="true">
+		<span id="lastName-error" class="error-message" aria-live="polite"></span> <!-- Error message span -->
 	</div>
+
 	<div class="mb-5">
 		<label for="email">Email <strong>(required)</strong></label>
-		<input type="email" class="form-control" id="email" name="email" required>
+		<input type="text" class="form-control" id="email" name="email" aria-required="true">
+		<span id="email-error" class="error-message" aria-live="polite"></span> <!-- Error message span -->
 	</div>
+
 	<fieldset class="mb-5">
 		<legend>How did you hear about us?</legend>
 		<div class="form-check">
@@ -29,7 +34,7 @@ formScript: true
 		</div>
 		<div class="form-check">
 			<input class="form-check-input" type="checkbox" id="socialMedia" name="socialMedia" value="Instagram / Facebook (selected)">
-			<label class="form-check-label" for="socialMedia"><a href="https://www.instagram.com/artisankitchenandbath18255/">Instagram</a> / <a href="https://www.facebook.com/ArtisanWoodDesigns">Facebook</a></label>
+			<label class="form-check-label" for="socialMedia">Instagram / Facebook</label>
 		</div>
 		<div class="form-check">
 			<input class="form-check-input" type="checkbox" id="referral" name="referral" value="From a friend or family member (selected)">
@@ -40,19 +45,25 @@ formScript: true
 			<label class="form-check-label" for="localAd">Local Advertisement</label>
 		</div>
 	</fieldset>
+
+	<div class="mb-5">
+		<label for="live">Where do you live? <strong>(required)</strong></label>
+		<input type="text" class="form-control" id="live" name="live" aria-required="true">
+		<span id="live-error" class="error-message" aria-live="polite"></span> <!-- Error message span -->
+	</div>
+
 	<div class="d-none">
 		<label>
 			Don’t fill this out if you’re human: <input name="bot-field" />
 		</label>
 	</div>
+
 	<div class="mb-5">
-		<label for="live">Where do you live? <strong>(required)</strong></label>
-		<input type="live" class="form-control" id="live" name="live" required>
+		<label for="message">Please provide a description of the project <strong>(required)</strong></label>
+		<textarea class="form-control" id="message" name="message" rows="5" aria-required="true"></textarea>
+		<span id="message-error" class="error-message" aria-live="polite"></span> <!-- Error message span -->
 	</div>
-	<div class="mb-5">
-		<label for="message">Please provide a description of the type of project and any other information you may want to tell us. <strong>(required)</strong></label>
-		<textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-	</div>
+
 	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <p class="lead text-center">We are looking forward to getting in touch with you!</p>
