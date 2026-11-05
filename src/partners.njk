@@ -1,0 +1,45 @@
+---
+title: Our partners
+description: Artisan Kitchen and Bath works with trusted cabinetry, countertop, hardware, and tile suppliers to bring each project together.
+layout: layouts/base.njk
+label: partners
+---
+
+<section class="container py-5" aria-labelledby="partners-heading">
+	<h2 id="partners-heading" class="text-center mb-3">Who we partner with</h2>
+	<p class="lead text-center mx-auto" style="max-width: 760px;">At the heart of every kitchen and bathroom are the materials and finishes that bring it all together. We work with industry-leading suppliers to support the quality, function, and character of each Artisan project.</p>
+	{% set partnerGroups = [
+		{ title: 'Cabinetry', tone: 'dark', partners: [
+			{ name: 'Miralis', logo: 'miralis_dark.jpg', url: 'https://www.miralis.com/' },
+			{ name: 'Elmwood', logo: 'elmwood.png', url: 'https://elmwoodcabinets.com/project/timeless-elegance/' },
+			{ name: 'Cabico', logo: 'cabico.png', url: 'https://cabico.com/en/' }
+		] },
+		{ title: 'Countertops', tone: 'light', partners: [
+			{ name: 'Urban Quarry', logo: 'urban-quarry.png', url: 'https://urbanquarry.ca/our-products/' },
+			{ name: 'Masterpiece Granite', logo: 'masterpiece.png', url: 'https://www.masterpiecegranite.com' },
+			{ name: 'Interstone Marble & Granite', logo: 'logo-interstone-main.jpg', url: 'https://interstone.ca' },
+			{ name: 'Cambria', logo: 'cambria-logo-light_edited.webp', url: 'https://www.cambriausa.com' },
+			{ name: 'Cosentino', logo: 'Cosentino.png', url: 'https://www.cosentino.com/en-ca/kitchens/kitchen-countertops/' },
+			{ name: 'HanStone Canada', logo: 'hanstone.png', url: 'https://hanstone.ca/en/' }
+		] },
+		{ title: 'Hardware & tile suppliers', tone: 'dark', partners: [
+			{ name: 'Richelieu', logo: 'Richelieu.png', url: 'https://www.richelieu.com/ca/en/' },
+			{ name: 'Berenson', logo: 'Berenson.png', url: 'https://www.berensonhardware.com' },
+			{ name: 'Euro Tile & Stone', logo: 'EuroTileStone.png', url: 'https://eurotilestone.com' }
+		] }
+	] %}
+	{% for group in partnerGroups %}
+	<section class="py-5 px-3 my-5 {% if group.tone == 'dark' %}bg-dark text-light{% else %}bg-light{% endif %}" aria-labelledby="{{ group.title | slug }}-heading">
+		<h3 id="{{ group.title | slug }}-heading" class="text-center mb-4">{{ group.title }}</h3>
+		<div class="row g-4 justify-content-center">
+		{% for partner in group.partners %}
+			<div class="col-6 col-md-4 col-xl-3 d-flex align-items-stretch">
+				<a class="partner-logo d-flex align-items-center justify-content-center w-100 p-3 {% if group.tone == 'dark' %}bg-white{% else %}bg-white border{% endif %}" href="{{ partner.url }}" target="_blank" rel="noopener noreferrer">
+					<img src="{{ settings.baseUrl }}img/logos/{{ partner.logo }}" class="img-fluid" alt="{{ partner.name }}">
+				</a>
+			</div>
+		{% endfor %}
+		</div>
+	</section>
+	{% endfor %}
+</section>

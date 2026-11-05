@@ -18,13 +18,13 @@ label: portfolio
 		<div class="row g-4" id="steve-portfolio-grid">
 			{% for project in stevePicks %}
 			<article class="col-md-6 col-xl-4 portfolio-card" data-portfolio-category="{{ project.category }}">
-				<button type="button" class="portfolio-image-button" data-portfolio-image="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" data-portfolio-title="{{ project.project }}" data-portfolio-category="{{ project.category }}" data-portfolio-filename="{{ project.filename }}">
+				<button type="button" class="portfolio-image-button" data-portfolio-image="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" data-portfolio-title="{{ project.category }}" data-portfolio-category="{{ project.category }}" data-portfolio-filename="{{ project.filename }}">
 					<img src="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" class="img-fluid" alt="{{ project.category }} project, {{ project.filename }}" loading="lazy">
 					<span class="visually-hidden">Open {{ project.filename }}</span>
 				</button>
 				<div class="portfolio-caption p-3">
-					<h3 class="h5 mb-1">{{ project.project }}</h3>
-					<p class="mb-0 text-muted">{{ project.category }}</p>
+					<h3 class="h5 mb-1">{{ project.category }}</h3>
+					<p class="mb-0 text-muted">Selected Artisan project</p>
 				</div>
 			</article>
 			{% endfor %}
