@@ -128,3 +128,70 @@ li[itemprop="address"] i.fa {
 	left: 0;
 	top: 0;
 }
+
+/* Steve's portfolio */
+.portfolio-intro {
+	max-width: 720px;
+}
+
+.portfolio-card {
+	transition: transform 0.2s ease;
+}
+
+.portfolio-card:hover,
+.portfolio-card:focus-within {
+	transform: translateY(-4px);
+}
+
+.portfolio-image-button {
+	width: 100%;
+	padding: 0;
+	border: 0;
+	background: #f1f1f1;
+	text-align: left;
+	cursor: pointer;
+}
+
+.portfolio-image-button img {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+}
+
+.portfolio-image-button:focus-visible {
+	outline: 3px solid #8f6b00;
+	outline-offset: 4px;
+}
+
+.portfolio-caption {
+	background: #fff;
+	border: 1px solid #dee2e6;
+	border-top: 0;
+}
+
+.portfolio-lightbox {
+	width: min(1000px, calc(100% - 2rem));
+	max-width: 1000px;
+	padding: 0;
+	border: 0;
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, .35);
+}
+
+.portfolio-lightbox::backdrop {
+	background: rgba(0, 0, 0, .75);
+}
+
+.portfolio-lightbox-close {
+	position: absolute;
+	top: .75rem;
+	right: .75rem;
+	z-index: 1;
+	background-color: #fff;
+	opacity: 1;
+}
+
+.portfolio-lightbox img {
+	max-height: 78vh;
+	object-fit: contain;
+	background: #101820;
+}
