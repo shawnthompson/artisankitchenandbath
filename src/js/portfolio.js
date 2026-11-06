@@ -4,8 +4,8 @@
 	const sections = document.querySelectorAll('[data-portfolio-section]');
 	const lightbox = document.getElementById('portfolio-lightbox');
 	const lightboxImage = document.getElementById('portfolio-lightbox-image');
-	const lightboxTitle = document.getElementById('portfolio-lightbox-title');
 	const lightboxCategory = document.getElementById('portfolio-lightbox-category');
+	const lightboxDescription = document.getElementById('portfolio-lightbox-description');
 	if (!filters.length || !lightbox) return;
 
 	filters.forEach((filter) => filter.addEventListener('click', () => {
@@ -25,9 +25,9 @@
 
 	document.querySelectorAll('[data-portfolio-image]').forEach((button) => button.addEventListener('click', () => {
 		lightboxImage.src = button.dataset.portfolioImage;
-		lightboxImage.alt = `${button.dataset.portfolioCategory} portfolio image`;
-		lightboxTitle.textContent = 'Selected work';
+		lightboxImage.alt = button.dataset.portfolioDescription;
 		lightboxCategory.textContent = button.dataset.portfolioCategory;
+		lightboxDescription.textContent = button.dataset.portfolioDescription;
 		lightbox.showModal();
 	}));
 

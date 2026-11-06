@@ -22,9 +22,9 @@ label: portfolio
 				{% for project in stevePicks %}
 				{% if project.category == subject %}
 				<article class="col-md-6 col-xl-4 portfolio-card" data-portfolio-category="{{ project.category }}">
-					<button type="button" class="portfolio-image-button" data-portfolio-image="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" data-portfolio-category="{{ project.category }}">
-						<img src="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" class="img-fluid" alt="{{ project.category }} portfolio image" loading="lazy">
-						<span class="visually-hidden">Open {{ project.category }} portfolio image</span>
+					<button type="button" class="portfolio-image-button" data-portfolio-image="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" data-portfolio-category="{{ project.category }}" data-portfolio-description="{{ project.description }}">
+						<img src="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" class="img-fluid" alt="{{ project.description }}" loading="lazy">
+						<span class="visually-hidden">Open {{ project.category }} image: {{ project.description }}</span>
 					</button>
 				</article>
 				{% endif %}
@@ -35,11 +35,11 @@ label: portfolio
 	</div>
 </section>
 
-<dialog id="portfolio-lightbox" class="portfolio-lightbox" aria-labelledby="portfolio-lightbox-title">
+<dialog id="portfolio-lightbox" class="portfolio-lightbox" aria-labelledby="portfolio-lightbox-category" aria-describedby="portfolio-lightbox-description">
 	<button type="button" class="btn-close portfolio-lightbox-close" aria-label="Close project image"></button>
 	<div class="row g-0 align-items-center">
 		<div class="col-lg-8"><img id="portfolio-lightbox-image" class="img-fluid w-100" alt=""></div>
-		<div class="col-lg-4 p-4"><p class="text-uppercase small text-muted mb-2" id="portfolio-lightbox-category"></p><h2 class="h3" id="portfolio-lightbox-title">Selected work</h2></div>
+		<div class="col-lg-4 p-4"><p class="text-uppercase small text-muted mb-2" id="portfolio-lightbox-category"></p><p id="portfolio-lightbox-description"></p></div>
 	</div>
 </dialog>
 
