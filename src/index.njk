@@ -21,9 +21,9 @@ permalink: /index.html
     nav a { text-decoration:none; color:var(--muted); }
     nav a:hover, nav a:focus-visible { color:var(--accent-dark); outline:3px solid #f4c49c; outline-offset:4px; }
     nav a.active { color:var(--accent-dark); border-bottom:2px solid var(--accent-dark); padding-bottom:4px; }
-    .button:hover, .button:focus-visible { background:var(--accent-dark); border-color:var(--accent-dark); color:#fff; }
-    .hero { min-height:78vh; display:grid; place-items:end start; padding:clamp(36px,7vw,92px); background:linear-gradient(90deg,rgba(17,30,30,.72),rgba(17,30,30,.08)),url('img/steve-picks/08/IMG_5346.jpg') center/cover; color:var(--white); }
-    .hero-copy { max-width:680px; }
+    .button:hover, .button:focus-visible { background:#58351f; border-color:#58351f; color:#fff; }
+    .hero { min-height:78vh; display:grid; place-items:end start; padding:clamp(36px,7vw,92px); background:linear-gradient(90deg,rgba(17,30,30,.88) 0%,rgba(17,30,30,.68) 48%,rgba(17,30,30,.2) 100%),url('img/steve-picks/08/IMG_5346.jpg') center/cover; color:var(--white); }
+    .hero-copy { max-width:680px; padding:28px; background:rgba(17,30,30,.28); }
     .eyebrow { font:700 12px Arial,sans-serif; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-dark); }
     .hero .eyebrow, .portfolio .eyebrow { color:#ecd5be; }
     h1,h2,h3 { line-height:1.1; margin:0 0 18px; }
@@ -31,7 +31,7 @@ permalink: /index.html
     h2 { font-size:clamp(32px,4vw,56px); }
     h3 { font-size:24px; }
     .hero p { max-width:590px; font-size:clamp(18px,2vw,24px); }
-    .button { display:inline-block; padding:12px 18px; border:1px solid var(--accent); background:var(--accent); color:white; text-decoration:none; font:700 13px Arial,sans-serif; letter-spacing:.08em; text-transform:uppercase; }
+    .button { display:inline-block; padding:12px 18px; border:1px solid var(--accent-dark); background:var(--accent-dark); color:white; text-decoration:none; font:700 13px Arial,sans-serif; letter-spacing:.08em; text-transform:uppercase; }
     .button.secondary { background:transparent; border-color:rgba(255,255,255,.7); margin-left:8px; }
     section { padding:clamp(56px,8vw,112px) clamp(20px,6vw,88px); }
     .section-intro { max-width:740px; margin-bottom:34px; }
@@ -43,7 +43,7 @@ permalink: /index.html
     .portfolio .section-intro p { color:#cbd6d2; }
     .filters { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
     .filters button { border:1px solid #627777; border-radius:999px; padding:9px 14px; background:transparent; color:white; font:700 12px Arial,sans-serif; letter-spacing:.08em; text-transform:uppercase; }
-    .filters button[aria-pressed="true"], .filters button:hover, .filters button:focus-visible { background:var(--accent); border-color:var(--accent); }
+    .filters button[aria-pressed="true"], .filters button:hover, .filters button:focus-visible { background:var(--accent-dark); border-color:var(--accent-dark); color:#fff; }
     .gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
     .project-card { margin:0; background:#314344; overflow:hidden; }
     .project-card img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; }
@@ -51,21 +51,32 @@ permalink: /index.html
     .project-card strong { display:block; font:700 16px Arial,sans-serif; }
     .project-card span { color:#cbd6d2; font-size:14px; }
     .process { background:#eeeae0; }
-    .dark-process { background:var(--dark); color:var(--white); }
-    .dark-process .eyebrow { color:#ecd5be; }
-    .dark-process .section-intro p { color:#cbd6d2; }
-    .dark-process .step { background:#314344; }
-    .dark-process .step p { color:#cbd6d2; }
-    .dark-process .step b, .dark-process .step i { color:#ecd5be; }
+    .dark-process { background:var(--paper); color:var(--ink); }
+    .dark-process .eyebrow { color:var(--accent-dark); }
+    .dark-process .section-intro p { color:var(--muted); }
+    .dark-process .step { background:rgba(255,255,255,.55); }
+    .dark-process .step p { color:var(--muted); }
+    .dark-process .step b, .dark-process .step i { color:var(--accent-dark); }
     .dealers { background:#202428; color:var(--white); }
+    .dealers .eyebrow, .testimonials .eyebrow { color:#f4c49c; }
     .dealers h2 { text-align:left; }
     .dealers .section-intro p { color:#cbd6d2; }
     .dealer-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:0 0 34px; }
     .dealer-logo { display:flex; align-items:center; justify-content:center; min-height:130px; padding:22px 16px; border-top:3px solid var(--accent); background:#314344; }
     .dealer-logo:hover, .dealer-logo:focus-visible { background:#3b5051; outline:3px solid #f4c49c; outline-offset:4px; }
     .dealer-logo img { display:block; max-height:76px; width:auto; max-width:100%; }
-    .dealers-link { display:inline-block; width:auto; padding:12px 18px; background:var(--accent); color:#fff; font:700 13px/1.2 Arial,sans-serif; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; }
-    .dealers-link:hover, .dealers-link:focus-visible { background:var(--accent-dark); color:#fff; outline:3px solid #f4c49c; outline-offset:4px; }
+    .dealers-link { display:inline-block; width:auto; padding:12px 18px; background:var(--accent-dark); color:#fff; font:700 13px/1.2 Arial,sans-serif; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; }
+    .dealers-link:hover, .dealers-link:focus-visible { background:#58351f; color:#fff; outline:3px solid #f4c49c; outline-offset:4px; }
+    .testimonials { background:var(--dark); color:var(--white); }
+    .testimonials .section-intro p { color:#cbd6d2; }
+    .testimonial-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px 34px; }
+    .testimonial { position:relative; margin:0; padding:52px 34px 24px; border-top:3px solid var(--accent); background:#314344; }
+    .testimonial::before { content:'“'; position:absolute; top:8px; left:14px; color:#ecd5be; font:700 58px/1 Georgia,serif; }
+    .testimonial p { margin:0 0 16px; color:#e5ece8; }
+    .testimonial p:last-of-type { margin-bottom:12px; }
+    .testimonial footer { padding:0; background:transparent; color:#ecd5be; font:700 13px Arial,sans-serif; letter-spacing:.03em; }
+    .testimonial cite { font-style:normal; }
+    .testimonial-rating { margin-left:8px; color:#f6d447; letter-spacing:.08em; }
     .process-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
     .step { padding:22px 16px; border-top:3px solid var(--accent); background:rgba(255,255,255,.55); }
     .step i { display:block; margin-bottom:18px; color:var(--accent-dark); font-size:36px; }
@@ -84,7 +95,7 @@ permalink: /index.html
     dialog::backdrop { background:rgba(0,0,0,.75); }
     .close { position:absolute; top:10px; right:10px; z-index:1; width:36px; height:36px; border:0; border-radius:50%; background:white; color:var(--ink); font-size:22px; }
     .button:hover, .button:focus-visible { outline:3px solid #f4c49c; outline-offset:4px; }
-    @media (max-width:800px) { .site-header { align-items:flex-start; flex-direction:column; } .story-grid,.gallery,.process-grid,.about-grid,.contact-grid,.dealer-grid { grid-template-columns:1fr; } .hero { min-height:70vh; } .button.secondary { margin:10px 0 0; } footer .footer-grid { grid-template-columns:1fr; } }
+    @media (max-width:800px) { .site-header { align-items:flex-start; flex-direction:column; } .story-grid,.gallery,.process-grid,.about-grid,.contact-grid,.dealer-grid,.testimonial-grid { grid-template-columns:1fr; } .hero { min-height:70vh; } .button.secondary { margin:10px 0 0; } footer .footer-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -95,6 +106,13 @@ permalink: /index.html
     <section class="portfolio" id="portfolio" aria-labelledby="homepage-portfolio-heading"><div class="section-intro"><div class="eyebrow">Selected work</div><h2 id="homepage-portfolio-heading">A glimpse of the work.</h2><p>Explore a sample of our kitchens, bathrooms, and custom millwork, then visit the full Portfolio page for the complete gallery.</p></div><div class="gallery"><figure class="project-card"><img src="img/steve-picks/42/IMG_3547-HDR.jpg" alt="Kitchen with custom cabinetry, stone counters, and a dining area" loading="lazy"><figcaption><strong>Kitchens</strong><span>Custom cabinetry and considered details.</span></figcaption></figure><figure class="project-card"><img src="img/steve-picks/47/Main 1.jpg" alt="Bathroom with a freestanding tub and tiled walk-in shower" loading="lazy"><figcaption><strong>Bathrooms</strong><span>Calm, functional spaces made to last.</span></figcaption></figure><figure class="project-card"><img src="img/steve-picks/06/Artisan-27.jpg" alt="Custom built-in wood bar and cabinetry" loading="lazy"><figcaption><strong>Custom millwork</strong><span>Built-ins that bring character to a room.</span></figcaption></figure></div><p class="text-center"><a class="button" href="portfolio/">View the full portfolio</a></p></section>
     <section class="process dark-process" id="services"><div class="section-intro"><div class="eyebrow">From idea to installation</div><h2>Your project in five steps.</h2><p>Artisan Kitchen and Bath offers personalized service from design, production, and installation.</p></div><div class="process-grid"><article class="step"><i class="fas fa-comments" aria-hidden="true"></i><b>01 · Consultation</b><p>Meet and discuss the project in depth. We come to your home and measure the space.</p></article><article class="step"><i class="fas fa-drafting-compass" aria-hidden="true"></i><b>02 · Design</b><p>Review 3D designs, refine the details, and select materials and colours together.</p></article><article class="step"><i class="fas fa-dollar-sign" aria-hidden="true"></i><b>03 · Price</b><p>Once the design and materials are finalized, we provide an estimate.</p></article><article class="step"><i class="fas fa-cogs" aria-hidden="true"></i><b>04 · Production</b><p>After approval and final measurements, we proceed with ordering and production.</p></article><article class="step"><i class="fas fa-toolbox" aria-hidden="true"></i><b>05 · Installation</b><p>Skilled installers bring the finished project to life in your home.</p></article></div></section>
     <section class="dealers" aria-labelledby="dealers-heading"><div class="section-intro"><div class="eyebrow">Our cabinet dealers</div><h2 id="dealers-heading">Trusted partners in every project.</h2><p>We work with respected cabinet makers to bring lasting quality, thoughtful design, and dependable craftsmanship to every space.</p></div><div class="dealer-grid"><a class="dealer-logo" href="https://www.miralis.com/" target="_blank" rel="noopener noreferrer"><img src="img/logos/miralis_dark.jpg" alt="Miralis"></a><a class="dealer-logo" href="https://elmwoodcabinets.com/project/timeless-elegance/" target="_blank" rel="noopener noreferrer"><img src="img/logos/elmwood.png" alt="Elmwood"></a><a class="dealer-logo" href="https://cabico.com/en/" target="_blank" rel="noopener noreferrer"><img src="img/logos/cabico.png" alt="Cabico"></a></div><a class="dealers-link" href="partners/">See who we partner with</a></section>
+    <section class="testimonials" aria-labelledby="testimonials-heading"><div class="section-intro"><div class="eyebrow">Client stories</div><h2 id="testimonials-heading">Made for living. Remembered for the details.</h2><p>Discover the experiences of our clients and the care that goes into every Artisan kitchen, bathroom, and millwork project.</p></div><div class="testimonial-grid">
+      <blockquote class="testimonial"><p>Artisan Kitchen and Bath were called in to renovate an old condo from the 60's - new kitchen plan complete with cabinets and many “nice to have” updates. Steve took the same approach in updating the bathrooms with fresh new cabinets and ideas to maximize space while creating the new look.</p><p>He prepared a good plan, presented fresh ideas, finalized a reasonable quote based on known lead times, and executed the plan perfectly. The kitchen arrived on time and the install went very good, especially given the challenges of hanging cabinets on old plaster walls without the usual studs to anchor them to.</p><p>I felt that this contractor was very talented, he communicated well and in a timely fashion, and was very co-operative in providing ideas and information outside his kitchen/bath obligations. And at end of each day, his house keeping was such that there was never any reason to follow behind and re-do the clean up - he was fussy about his work and paid close attention to detail throughout.</p><p>There is no doubt that I would contact Steve through Artisan Kitchen and Bath to help me out with the next project.</p><footer><cite>Dale Golledge</cite><span class="testimonial-rating" aria-label="5 out of 5 stars" role="img">★★★★★</span></footer></blockquote>
+      <blockquote class="testimonial"><p>We met with multiple contractors for our kitchen renovation, and then along came Artisan. To say we are happy with our new kitchen would be an understatement. Artisan truly brought my vision to life!</p><p>They are extremely professional, have excellent communication skills, meticulous and organized. They are always willing to trouble shoot and be flexible. We've already had them back for some additional work, and wouldn't hesitate to hire them again! Thanks again Artisan!!</p><footer><cite>Jordan Schaille</cite><span class="testimonial-rating" aria-label="5 out of 5 stars" role="img">★★★★★</span></footer></blockquote>
+      <blockquote class="testimonial"><p>Absolutely love my new kitchen, something out of a magazine!! Really enjoyed working with Artisan, they are meticulous, very professional and has great design ideas! This is my 3rd kitchen over the years (different homes) one of the best ones yet! I highly recommend Artisan Kitchen and Bath!!</p><footer><cite>Helen Kostovos</cite><span class="testimonial-rating" aria-label="5 out of 5 stars" role="img">★★★★★</span></footer></blockquote>
+      <blockquote class="testimonial"><p>With Artisan Wood Designs you get what you pay for. Fantastic design team, high quality products installed with great care on time as promised. I am very happy with my new Artisan kitchen.</p><footer><cite>Darcy Aitkens</cite><span class="testimonial-rating" aria-label="5 out of 5 stars" role="img">★★★★★</span></footer></blockquote>
+      <blockquote class="testimonial"><p>Award winning designers and the finest artists to install the millwork. Flawless craftsmanship!</p><footer><cite>Francois Asselin</cite><span class="testimonial-rating" aria-label="5 out of 5 stars" role="img">★★★★★</span></footer></blockquote>
+    </div></section>
     <section id="about"><div class="about-grid"><div><div class="eyebrow">About Artisan</div><h2>Craftsmanship with a personal touch.</h2><p>Artisan Kitchen and Bath, based in Cornwall, Ontario, is a destination for personalized custom cabinetry solutions. With an unwavering commitment to craftsmanship, creativity, and professionalism, the team offers tailored services from design conception to meticulous installation.</p><p>Meet Steve and Manny, whose friendship and shared passion for design and craftsmanship grew from a modest Cornwall workshop into a business known for quality and innovation. They remain at the heart of the operation, overseeing projects and bringing a hands-on approach to every space.</p></div><div class="contact-card"><h3>Two showrooms</h3><p><strong>Cornwall</strong><br>18255 Tyotown Rd<br>South Glengarry, Ontario K6H 7S7<br><a href="tel:6139337272">613-933-7272</a></p><p><strong>Prescott</strong><br>1652 Cty Rd 2<br>Prescott, Ontario K0E 1T0<br><a href="tel:6139252777">613-925-2777</a></p><p>Monday–Friday, 9:00 AM–5:00 PM</p></div></div></section>
     <section id="contact" class="process"><div class="contact-grid"><div><div class="eyebrow">Let’s talk</div><h2>Ready to begin?</h2><p>Whether you are planning a new home or remodeling your present space, we would love to hear what you have in mind.</p><a class="button" href="contact/">Contact Artisan</a></div><div class="contact-card"><h3>Contact Artisan Kitchen and Bath</h3><p>Tell us a little about your project and we will be in touch.</p><p><a href="mailto:info@artisankitchenandbath.ca">info@artisankitchenandbath.ca</a></p><p>Follow along on <a href="https://www.instagram.com/artisankitchenandbath18255/">Instagram</a> and <a href="https://www.facebook.com/ArtisanWoodDesigns">Facebook</a>.</p></div></div></section>
   </main>

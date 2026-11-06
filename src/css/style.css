@@ -156,20 +156,22 @@ select:focus-visible {
 	display: grid;
 	place-items: end start;
 	padding: clamp(36px, 7vw, 92px);
-	background: linear-gradient(90deg, rgba(17, 30, 30, .76), rgba(17, 30, 30, .12)), url('/img/steve-picks/42/IMG_3547-HDR.jpg') center / cover;
+	background: linear-gradient(90deg, rgba(17, 30, 30, .88) 0%, rgba(17, 30, 30, .68) 48%, rgba(17, 30, 30, .2) 100%), url('/img/steve-picks/42/IMG_3547-HDR.jpg') center / cover;
 	color: #fff;
 }
 
 .partners-hero {
-	background-image: linear-gradient(90deg, rgba(17, 30, 30, .76), rgba(17, 30, 30, .12)), url('/img/headerTraditional.png');
+	background-image: linear-gradient(90deg, rgba(17, 30, 30, .88) 0%, rgba(17, 30, 30, .68) 48%, rgba(17, 30, 30, .2) 100%), url('/img/headerTraditional.png');
 }
 
 .contact-hero {
-	background-image: linear-gradient(90deg, rgba(17, 30, 30, .78), rgba(17, 30, 30, .16)), url('/img/contact-hero.jpg');
+	background-image: linear-gradient(90deg, rgba(17, 30, 30, .88) 0%, rgba(17, 30, 30, .68) 48%, rgba(17, 30, 30, .2) 100%), url('/img/contact-hero.jpg');
 }
 
 .portfolio-hero-copy {
 	max-width: 680px;
+	padding: 28px;
+	background: rgba(17, 30, 30, .28);
 }
 
 .portfolio-hero-eyebrow {
