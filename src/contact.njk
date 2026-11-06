@@ -6,7 +6,9 @@ label: contact
 formScript: true
 ---
 
-<form class="container mt-5" novalidate data-netlify="true" netlify-honeypot="bot-field" name="contact" method="post" action="{{ settings.baseUrl }}thanks/">
+<section class="contact-form-section" aria-labelledby="contact-form-heading">
+	<h2 id="contact-form-heading" class="visually-hidden">Contact form</h2>
+<form id="contact-form" class="container" novalidate data-netlify="true" netlify-honeypot="bot-field" name="contact" method="post" action="{{ settings.baseUrl }}thanks/">
 	<input type="hidden" name="subject" value="" /> <!-- subject will be set by JS -->
 
 	<div class="mb-5">
@@ -65,22 +67,33 @@ formScript: true
 		<span id="message-error" class="error-message" aria-live="polite"></span> <!-- Error message span -->
 	</div>
 
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn contact-form-submit">Submit</button>
 </form>
 <p class="lead text-center">We are looking forward to getting in touch with you!</p>
+</section>
 
-<section class="container my-5" aria-labelledby="showroom-maps-heading">
-	<h2 id="showroom-maps-heading" class="text-center mb-4">Visit a showroom</h2>
+<section class="showroom-section" aria-labelledby="showroom-maps-heading">
+	<div class="container">
+	<div class="section-intro">
+		<div class="eyebrow">Visit a showroom</div>
+		<h2 id="showroom-maps-heading">See the possibilities in person.</h2>
+		<p>Visit one of our showrooms to explore materials, finishes, and design ideas with the Artisan team. We are happy to talk through your project, answer questions, and help you imagine what is possible in your home.</p>
+	</div>
 	<div class="row g-4">
-		<div class="col-lg-6">
+		<div class="col-lg-6 showroom-card">
+			<div class="showroom-card-content">
 			<h3 class="h4">Cornwall</h3>
 			<p>18255 Tyotown Rd, South Glengarry, Ontario K6H 7S7<br><a href="tel:6139337272">613-933-7272</a></p>
 			<iframe title="Map showing the Artisan Kitchen and Bath Cornwall showroom" src="https://www.google.com/maps?q=18255+Tyotown+Rd+Ontario&output=embed" width="100%" height="300" style="border:0" loading="lazy" allowfullscreen></iframe>
+			</div>
 		</div>
-		<div class="col-lg-6">
+		<div class="col-lg-6 showroom-card">
+			<div class="showroom-card-content">
 			<h3 class="h4">Prescott</h3>
 			<p>1652 Cty Rd 2, Prescott, Ontario K0E 1T0<br><a href="tel:6139252777">613-925-2777</a></p>
 			<iframe title="Map showing the Artisan Kitchen and Bath Prescott showroom" src="https://www.google.com/maps?q=1652+Cty+Rd+2+Prescott+Ontario&output=embed" width="100%" height="300" style="border:0" loading="lazy" allowfullscreen></iframe>
+			</div>
 		</div>
 	</div>
+</div>
 </section>

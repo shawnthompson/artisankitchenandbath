@@ -1,8 +1,12 @@
 
-{% if label == "portfolio" or label == "partners" %}
-	<section class="portfolio-hero{% if label == 'partners' %} partners-hero{% endif %}" aria-labelledby="portfolio-hero-heading">
+{% if label == "portfolio" or label == "partners" or label == "contact" %}
+	<section class="portfolio-hero{% if label == 'partners' %} partners-hero{% elif label == 'contact' %} contact-hero{% endif %}" aria-labelledby="portfolio-hero-heading">
 		<div class="portfolio-hero-copy">
-			{% if label == "partners" %}
+			{% if label == "contact" %}
+			<div class="portfolio-hero-eyebrow">Let's talk · Cornwall & Prescott, Ontario</div>
+			<h1 id="portfolio-hero-heading">Let's make room for what matters.</h1>
+			<p>Tell us about your kitchen, bathroom, or custom millwork project.</p>
+			{% elif label == "partners" %}
 			<div class="portfolio-hero-eyebrow">Our trusted partners · Cornwall & Prescott, Ontario</div>
 			<h1 id="portfolio-hero-heading">The details that bring a space together.</h1>
 			<p>Meet the trusted suppliers who help us create thoughtful, lasting kitchens and bathrooms.</p>
