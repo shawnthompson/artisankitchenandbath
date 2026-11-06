@@ -48,10 +48,20 @@
 	text-decoration: none;
 }
 
+.site-navigation-links a:visited {
+	color: #465556;
+}
+
 .site-navigation-links a:hover,
-.site-navigation-links a:focus-visible,
-.site-navigation-links a.active {
+.site-navigation-links a:focus-visible {
 	color: #70452b;
+}
+
+.site-navigation-current {
+	color: #70452b;
+	cursor: default;
+	border-bottom: 2px solid #70452b;
+	padding-bottom: 4px;
 }
 
 .site-navigation-links a:focus-visible,

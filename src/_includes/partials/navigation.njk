@@ -3,13 +3,19 @@
 		<img src="{{ settings.baseUrl }}img/logos/artisan.png" alt="Artisan Kitchen and Bath">
 	</a>
 	<div class="site-navigation-links">
+		<a href="{{ settings.baseUrl }}">Home</a>
 		{% for item in ["portfolio", "services", "about", "contact"] %}
+		{% if label == item %}
+		<span class="site-navigation-current" aria-current="page" aria-disabled="true">
+			{{ item | capitalize }}
+		</span>
+		{% else %}
 		<a
-			class="{% if label == item %}active{% endif %}"
 			href="{{ settings.baseUrl }}#{{ item }}"
-			{% if label == item %}aria-current="page"{% endif %}>
-			{{ item | capitalize }}{% if item == "about" %} Us{% elif item == "contact" %} Us{% endif %}
+			>
+			{{ item | capitalize }}
 		</a>
+		{% endif %}
 		{% endfor %}
 	</div>
 </nav>
