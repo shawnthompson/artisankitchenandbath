@@ -209,6 +209,10 @@ main > aside {
 	padding-bottom: 100px;
 }
 
+main > .portfolio-hero {
+	margin-top: 0;
+}
+
 .lead strong {
 	color: rgb(255, 111, 1);
 	/* Dark grey text */

@@ -6,7 +6,7 @@
 		{% for item in ["portfolio", "partners", "services", "about", "contact"] %}
 		<a
 			class="{% if label == item %}active{% endif %}"
-			href="{{ settings.baseUrl }}{{ item }}/"
+			href="{% if item == 'partners' %}{{ settings.baseUrl }}partners/{% else %}{{ settings.baseUrl }}#{{ item }}{% endif %}"
 			{% if label == item %}aria-current="page"{% endif %}>
 			{{ item | capitalize }}{% if item == "about" %} Us{% elif item == "contact" %} Us{% endif %}
 		</a>
