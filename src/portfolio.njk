@@ -15,20 +15,23 @@ label: portfolio
 			<button type="button" class="btn btn-outline-secondary" data-portfolio-filter="Bathrooms" aria-pressed="false">Bathrooms</button>
 			<button type="button" class="btn btn-outline-secondary" data-portfolio-filter="Custom Millwork" aria-pressed="false">Custom millwork</button>
 		</div>
-		<div class="row g-4" id="steve-portfolio-grid">
-			{% for project in stevePicks %}
-			<article class="col-md-6 col-xl-4 portfolio-card" data-portfolio-category="{{ project.category }}">
-				<button type="button" class="portfolio-image-button" data-portfolio-image="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" data-portfolio-title="{{ project.category }}" data-portfolio-category="{{ project.category }}" data-portfolio-filename="{{ project.filename }}">
-					<img src="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" class="img-fluid" alt="{{ project.category }} project, {{ project.filename }}" loading="lazy">
-					<span class="visually-hidden">Open {{ project.filename }}</span>
-				</button>
-				<div class="portfolio-caption p-3">
-					<h3 class="h5 mb-1">{{ project.category }}</h3>
-					<p class="mb-0 text-muted">Selected Artisan project</p>
-				</div>
-			</article>
-			{% endfor %}
-		</div>
+		{% for subject in ["Kitchens", "Bathrooms", "Custom Millwork"] %}
+		<section class="portfolio-subject mb-5" data-portfolio-section="{{ subject }}" aria-labelledby="portfolio-{{ subject | lower | replace(' ', '-') }}">
+			<h3 id="portfolio-{{ subject | lower | replace(' ', '-') }}" class="h2 mb-4">{{ subject }}</h3>
+			<div class="row g-4">
+				{% for project in stevePicks %}
+				{% if project.category == subject %}
+				<article class="col-md-6 col-xl-4 portfolio-card" data-portfolio-category="{{ project.category }}">
+					<button type="button" class="portfolio-image-button" data-portfolio-image="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" data-portfolio-category="{{ project.category }}">
+						<img src="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" class="img-fluid" alt="{{ project.category }} portfolio image" loading="lazy">
+						<span class="visually-hidden">Open {{ project.category }} portfolio image</span>
+					</button>
+				</article>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</section>
+		{% endfor %}
 	</div>
 </section>
 
@@ -36,7 +39,7 @@ label: portfolio
 	<button type="button" class="btn-close portfolio-lightbox-close" aria-label="Close project image"></button>
 	<div class="row g-0 align-items-center">
 		<div class="col-lg-8"><img id="portfolio-lightbox-image" class="img-fluid w-100" alt=""></div>
-		<div class="col-lg-4 p-4"><p class="text-uppercase small text-muted mb-2" id="portfolio-lightbox-category"></p><h2 class="h3" id="portfolio-lightbox-title"></h2><p class="text-muted mb-0" id="portfolio-lightbox-filename"></p></div>
+		<div class="col-lg-4 p-4"><p class="text-uppercase small text-muted mb-2" id="portfolio-lightbox-category"></p><h2 class="h3" id="portfolio-lightbox-title">Selected work</h2></div>
 	</div>
 </dialog>
 

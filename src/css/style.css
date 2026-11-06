@@ -1,5 +1,146 @@
 /* Custom Styles */
 
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	background: rgba(247, 246, 241, .96);
+	border-bottom: 1px solid #d9dfdb;
+	backdrop-filter: blur(10px);
+}
+
+.site-navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 24px;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 16px clamp(20px, 5vw, 72px);
+}
+
+.site-brand {
+	display: block;
+	line-height: 1;
+}
+
+.site-brand img {
+	display: block;
+	width: 148px;
+	height: auto;
+}
+
+.site-navigation-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 18px;
+	font: 600 13px/1.2 Arial, sans-serif;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.site-navigation-links a {
+	color: #465556;
+	text-decoration: none;
+}
+
+.site-navigation-links a:hover,
+.site-navigation-links a:focus-visible,
+.site-navigation-links a.active {
+	color: #70452b;
+}
+
+.site-navigation-links a:focus-visible,
+.site-brand:focus-visible,
+.site-footer a:focus-visible {
+	outline: 3px solid #a06a43;
+	outline-offset: 4px;
+}
+
+.site-footer {
+	padding: 36px clamp(20px, 6vw, 88px);
+	background: #182526;
+	color: #d7e0dc;
+}
+
+.site-footer .footer-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.site-footer p {
+	margin: 5px 0;
+}
+
+.site-footer a {
+	color: #ecd5be;
+}
+
+.portfolio-hero {
+	min-height: 68vh;
+	display: grid;
+	place-items: end start;
+	padding: clamp(36px, 7vw, 92px);
+	background: linear-gradient(90deg, rgba(17, 30, 30, .76), rgba(17, 30, 30, .12)), url('/img/steve-picks/42/IMG_3547-HDR.jpg') center / cover;
+	color: #fff;
+}
+
+.portfolio-hero-copy {
+	max-width: 680px;
+}
+
+.portfolio-hero-eyebrow {
+	margin-bottom: 14px;
+	color: #ecd5be;
+	font: 700 12px/1.2 Arial, sans-serif;
+	letter-spacing: .16em;
+	text-transform: uppercase;
+}
+
+.portfolio-hero h1 {
+	max-width: 760px;
+	margin: 0 0 18px;
+	font: 700 clamp(42px, 7vw, 88px) / 1.1 Georgia, serif;
+}
+
+.portfolio-hero p {
+	max-width: 590px;
+	margin-bottom: 28px;
+	font: 400 clamp(18px, 2vw, 24px) / 1.6 Georgia, serif;
+}
+
+.portfolio-hero-button {
+	display: inline-block;
+	padding: 12px 18px;
+	border: 1px solid #a06a43;
+	background: #a06a43;
+	color: #fff !important;
+	font: 700 13px/1.2 Arial, sans-serif;
+	letter-spacing: .08em;
+	text-decoration: none !important;
+	text-transform: uppercase;
+}
+
+.portfolio-hero-button:hover,
+.portfolio-hero-button:focus-visible {
+	background: #70452b;
+	border-color: #70452b;
+}
+
+@media (max-width: 800px) {
+	.site-navigation {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.site-footer .footer-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
 a,
 a:visited {
 	color: #5BC0BE;
@@ -145,6 +286,11 @@ li[itemprop="address"] i.fa {
 	max-width: 720px;
 }
 
+.portfolio-subject + .portfolio-subject {
+	border-top: 1px solid #dee2e6;
+	padding-top: 3rem;
+}
+
 .portfolio-card {
 	transition: transform 0.2s ease;
 }
@@ -172,12 +318,6 @@ li[itemprop="address"] i.fa {
 .portfolio-image-button:focus-visible {
 	outline: 3px solid #8f6b00;
 	outline-offset: 4px;
-}
-
-.portfolio-caption {
-	background: #fff;
-	border: 1px solid #dee2e6;
-	border-top: 0;
 }
 
 .portfolio-lightbox {
