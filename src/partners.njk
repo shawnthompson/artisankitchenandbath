@@ -5,9 +5,12 @@ layout: layouts/base.njk
 label: partners
 ---
 
-<section class="container py-5" aria-labelledby="partners-heading">
-	<h2 id="partners-heading" class="text-center mb-3">Who we partner with</h2>
-	<p class="lead text-center mx-auto" style="max-width: 760px;">At the heart of every kitchen and bathroom are the materials and finishes that bring it all together. We work with industry-leading suppliers to support the quality, function, and character of each Artisan project.</p>
+<section class="partners-page" aria-labelledby="partners-heading">
+	<div class="partners-intro container">
+		<div class="eyebrow">Our trusted partners</div>
+		<h2 id="partners-heading">The details that bring a space together.</h2>
+		<p>At the heart of every kitchen and bathroom are the materials and finishes that shape the final result. We work with trusted suppliers to support the quality, function, and character of each Artisan project.</p>
+	</div>
 	{% set partnerGroups = [
 		{ title: 'Cabinetry', tone: 'dark', partners: [
 			{ name: 'Miralis', logo: 'miralis_dark.jpg', url: 'https://www.miralis.com/' },
@@ -29,16 +32,22 @@ label: partners
 		] }
 	] %}
 	{% for group in partnerGroups %}
-	<section class="py-5 px-3 my-5 {% if group.tone == 'dark' %}bg-dark text-light{% else %}bg-light{% endif %}" aria-labelledby="{{ group.title | slug }}-heading">
-		<h3 id="{{ group.title | slug }}-heading" class="text-center mb-4">{{ group.title }}</h3>
-		<div class="row g-4 justify-content-center">
+	<section class="partner-group {% if group.tone == 'dark' %}partner-group-dark{% else %}partner-group-light{% endif %}" aria-labelledby="{{ group.title | slug }}-heading">
+		<div class="container">
+			<div class="partner-group-intro">
+				<div class="eyebrow">Artisan selections</div>
+				<h3 id="{{ group.title | slug }}-heading">{{ group.title }}</h3>
+				<p>{% if group.title == 'Cabinetry' %}Cabinet makers who help us create beautiful, durable foundations for every room.{% elif group.title == 'Countertops' %}Surface partners who bring colour, texture, and lasting performance to each project.{% else %}Hardware and tile suppliers who complete the look and feel of an Artisan space.{% endif %}</p>
+			</div>
+			<div class="partner-grid">
 		{% for partner in group.partners %}
-			<div class="col-6 col-md-4 col-xl-3 d-flex align-items-stretch">
-				<a class="partner-logo d-flex align-items-center justify-content-center w-100 p-3 {% if group.tone == 'dark' %}bg-white{% else %}bg-white border{% endif %}" href="{{ partner.url }}" target="_blank" rel="noopener noreferrer">
+			<div class="partner-card">
+				<a class="partner-logo{% if partner.name == 'Elmwood' %} partner-logo-dark{% endif %}" href="{{ partner.url }}" target="_blank" rel="noopener noreferrer">
 					<img src="{{ settings.baseUrl }}img/logos/{{ partner.logo }}" class="img-fluid" alt="{{ partner.name }}">
 				</a>
 			</div>
 		{% endfor %}
+			</div>
 		</div>
 	</section>
 	{% endfor %}
