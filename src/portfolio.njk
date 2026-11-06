@@ -32,6 +32,12 @@ label: portfolio
 			</div>
 		</section>
 		{% endfor %}
+		<div class="portfolio-filters portfolio-filters-bottom d-flex flex-wrap justify-content-center gap-2 mt-4" role="group" aria-label="Filter portfolio projects at the bottom of the page">
+			<button type="button" class="btn btn-outline-secondary active" data-portfolio-filter="all" aria-pressed="true">All work</button>
+			<button type="button" class="btn btn-outline-secondary" data-portfolio-filter="Kitchens" aria-pressed="false">Kitchens</button>
+			<button type="button" class="btn btn-outline-secondary" data-portfolio-filter="Bathrooms" aria-pressed="false">Bathrooms</button>
+			<button type="button" class="btn btn-outline-secondary" data-portfolio-filter="Custom Millwork" aria-pressed="false">Custom millwork</button>
+		</div>
 	</div>
 </section>
 
