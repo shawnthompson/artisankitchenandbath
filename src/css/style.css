@@ -1,5 +1,63 @@
 /* Custom Styles */
 
+a:hover,
+a:focus,
+a:focus-visible,
+button:focus,
+button:focus-visible,
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible,
+select:focus,
+select:focus-visible {
+	outline: 3px solid #a06a43;
+	outline-offset: 4px;
+}
+
+.site-brand:hover,
+.site-brand:focus-visible,
+.site-navigation-links a:hover,
+.site-navigation-links a:focus-visible,
+.portfolio-hero-button:hover,
+.portfolio-hero-button:focus-visible,
+.portfolio-image-button:hover,
+.portfolio-image-button:focus-visible,
+.partner-logo:hover,
+.partner-logo:focus-visible,
+.showroom-card-content a:hover,
+.showroom-card-content a:focus,
+.showroom-card-content a:focus-visible,
+.contact-card a:hover,
+.contact-card a:focus,
+.site-footer a:hover,
+.site-footer a:focus,
+.contact-form-submit:hover,
+.contact-form-submit:focus-visible,
+.dealers-link:hover,
+.dealers-link:focus-visible {
+	outline: 3px solid #a06a43;
+	outline-offset: 4px;
+}
+
+.contact-card a:hover,
+.contact-card a:focus,
+.contact-card a:focus-visible,
+.showroom-card-content a:hover,
+.showroom-card-content a:focus,
+.showroom-card-content a:focus-visible {
+	outline: 3px solid #a06a43 !important;
+	outline-offset: 4px;
+	box-shadow: 0 0 0 1px #a06a43;
+}
+
+.contact-card a,
+.showroom-card-content a {
+	display: inline-block;
+	padding: 1px 3px;
+	margin: -1px -3px;
+}
+
 .page-contact {
 	background: #f7f6f1;
 }
@@ -320,6 +378,21 @@ li[itemprop="address"] i.fa {
 	max-width: 720px;
 }
 
+.portfolio-filters .btn {
+	border-color: #a06a43;
+	color: #70452b;
+	font-weight: 700;
+}
+
+.portfolio-filters .btn:hover,
+.portfolio-filters .btn:focus,
+.portfolio-filters .btn:focus-visible,
+.portfolio-filters .btn.active {
+	border-color: #70452b;
+	background: #70452b;
+	color: #fff;
+}
+
 .portfolio-subject + .portfolio-subject {
 	border-top: 1px solid #dee2e6;
 	padding-top: 3rem;
@@ -350,7 +423,7 @@ li[itemprop="address"] i.fa {
 }
 
 .portfolio-image-button:focus-visible {
-	outline: 3px solid #8f6b00;
+	outline: 3px solid #a06a43;
 	outline-offset: 4px;
 }
 
