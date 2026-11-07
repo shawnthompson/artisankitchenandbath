@@ -1,0 +1,54 @@
+---
+title: Our partners
+description: Artisan Kitchen and Bath works with trusted cabinetry, countertop, hardware, and tile suppliers to bring each project together.
+layout: layouts/base.njk
+label: partners
+---
+
+<section class="partners-page" aria-labelledby="partners-heading">
+	<div class="partners-intro container">
+		<div class="eyebrow">Our trusted partners</div>
+		<h2 id="partners-heading">The details that bring a space together.</h2>
+		<p>At the heart of every kitchen and bathroom are the materials and finishes that shape the final result. We work with trusted suppliers to support the quality, function, and character of each Artisan project.</p>
+	</div>
+	{% set partnerGroups = [
+		{ title: 'Cabinetry', tone: 'dark', partners: [
+			{ name: 'Miralis', logo: 'miralis_dark.jpg', url: 'https://www.miralis.com/' },
+			{ name: 'Elmwood', logo: 'elmwood.png', url: 'https://elmwoodcabinets.com/project/timeless-elegance/' },
+			{ name: 'Cabico', logo: 'cabico.png', url: 'https://cabico.com/en/' }
+		] },
+		{ title: 'Countertops', tone: 'light', partners: [
+			{ name: 'Urban Quarry', logo: 'urban-quarry.png', url: 'https://urbanquarry.ca/our-products/' },
+			{ name: 'Masterpiece Granite', logo: 'masterpiece.png', url: 'https://www.masterpiecegranite.com' },
+			{ name: 'Interstone Marble & Granite', logo: 'logo-interstone-main.jpg', url: 'https://interstone.ca' },
+			{ name: 'Cambria', logo: 'cambria-logo-light_edited.webp', url: 'https://www.cambriausa.com' },
+			{ name: 'Cosentino', logo: 'Cosentino.png', url: 'https://www.cosentino.com/en-ca/kitchens/kitchen-countertops/' },
+			{ name: 'HanStone Canada', logo: 'hanstone.png', url: 'https://hanstone.ca/en/' }
+		] },
+		{ title: 'Hardware & tile suppliers', tone: 'dark', partners: [
+			{ name: 'Richelieu', logo: 'Richelieu.png', url: 'https://www.richelieu.com/ca/en/' },
+			{ name: 'Berenson', logo: 'Berenson.png', url: 'https://www.berensonhardware.com' },
+			{ name: 'Euro Tile & Stone', logo: 'EuroTileStone.png', url: 'https://eurotilestone.com' }
+		] }
+	] %}
+	{% for group in partnerGroups %}
+	<section class="partner-group {% if group.tone == 'dark' %}partner-group-dark{% else %}partner-group-light{% endif %}" aria-labelledby="{{ group.title | slug }}-heading">
+		<div class="container">
+			<div class="partner-group-intro">
+				<div class="eyebrow">Artisan selections</div>
+				<h3 id="{{ group.title | slug }}-heading">{{ group.title }}</h3>
+				<p>{% if group.title == 'Cabinetry' %}Cabinet makers who help us create beautiful, durable foundations for every room.{% elif group.title == 'Countertops' %}Surface partners who bring colour, texture, and lasting performance to each project.{% else %}Hardware and tile suppliers who complete the look and feel of an Artisan space.{% endif %}</p>
+			</div>
+			<div class="partner-grid">
+		{% for partner in group.partners %}
+			<div class="partner-card">
+				<a class="partner-logo{% if partner.name == 'Elmwood' %} partner-logo-dark{% endif %}" href="{{ partner.url }}" target="_blank" rel="noopener noreferrer">
+					<img src="{{ settings.baseUrl }}img/logos/{{ partner.logo }}" class="img-fluid" alt="{{ partner.name }}">
+				</a>
+			</div>
+		{% endfor %}
+			</div>
+		</div>
+	</section>
+	{% endfor %}
+</section>

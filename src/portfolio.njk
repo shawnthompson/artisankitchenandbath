@@ -1,6 +1,52 @@
 ---
 title: Portfolio
-description: Artisan Kitchen and Bath offers personalized service from design, production and installation. We hold ourselves to the highest standards of craftsmanship, creativity and professionalism. Whether you are planning a new home or remodeling your present home, the exceptional quality and elegance of our work will enhance both its beauty and its value.
+description: Explore selected kitchens, bathrooms, and custom millwork supplied for the Artisan Kitchen and Bath portfolio.
 layout: layouts/base.njk
 label: portfolio
 ---
+
+<section class="steve-portfolio py-5" aria-labelledby="portfolio-heading">
+	<div class="container">
+		<h2 id="portfolio-heading" class="text-center mb-3">Selected work</h2>
+		<p class="text-center mx-auto portfolio-intro">These projects reflect the range of spaces Artisan Kitchen and Bath designs, builds, and installs across Southeastern Ontario.</p>
+		<div class="portfolio-filters d-flex flex-wrap justify-content-center gap-2 my-4" role="group" aria-label="Filter portfolio projects">
+			<button type="button" class="btn btn-outline-secondary active" data-portfolio-filter="all" aria-pressed="true">All work</button>
+			<button type="button" class="btn btn-outline-secondary" data-portfolio-filter="Kitchens" aria-pressed="false">Kitchens</button>
+			<button type="button" class="btn btn-outline-secondary" data-portfolio-filter="Bathrooms" aria-pressed="false">Bathrooms</button>
+			<button type="button" class="btn btn-outline-secondary" data-portfolio-filter="Custom Millwork" aria-pressed="false">Custom millwork</button>
+		</div>
+		{% for subject in ["Kitchens", "Bathrooms", "Custom Millwork"] %}
+		<section class="portfolio-subject mb-5" data-portfolio-section="{{ subject }}" aria-labelledby="portfolio-{{ subject | lower | replace(' ', '-') }}">
+			<h3 id="portfolio-{{ subject | lower | replace(' ', '-') }}" class="h2 mb-4">{{ subject }}</h3>
+			<div class="row g-4">
+				{% for project in stevePicks %}
+				{% if project.category == subject %}
+				<article class="col-md-6 col-xl-4 portfolio-card" data-portfolio-category="{{ project.category }}">
+					<button type="button" class="portfolio-image-button" data-portfolio-image="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" data-portfolio-category="{{ project.category }}" data-portfolio-description="{{ project.description }}">
+						<img src="{{ settings.baseUrl }}img/{{ project.assetDir }}/{{ project.image | url_encode }}" class="img-fluid" alt="{{ project.description }}" loading="lazy">
+						<span class="visually-hidden">Open {{ project.category }} image: {{ project.description }}</span>
+					</button>
+				</article>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</section>
+		{% endfor %}
+		<div class="portfolio-filters portfolio-filters-bottom d-flex flex-wrap justify-content-center gap-2 mt-4" role="group" aria-label="Filter portfolio projects at the bottom of the page">
+			<button type="button" class="btn btn-outline-secondary active" data-portfolio-filter="all" aria-pressed="true">All work</button>
+			<button type="button" class="btn btn-outline-secondary" data-portfolio-filter="Kitchens" aria-pressed="false">Kitchens</button>
+			<button type="button" class="btn btn-outline-secondary" data-portfolio-filter="Bathrooms" aria-pressed="false">Bathrooms</button>
+			<button type="button" class="btn btn-outline-secondary" data-portfolio-filter="Custom Millwork" aria-pressed="false">Custom millwork</button>
+		</div>
+	</div>
+</section>
+
+<dialog id="portfolio-lightbox" class="portfolio-lightbox" aria-labelledby="portfolio-lightbox-category" aria-describedby="portfolio-lightbox-description">
+	<button type="button" class="btn-close portfolio-lightbox-close" aria-label="Close project image"></button>
+	<div class="row g-0 align-items-center">
+		<div class="col-lg-8"><img id="portfolio-lightbox-image" class="img-fluid w-100" alt=""></div>
+		<div class="col-lg-4 p-4"><p class="text-uppercase small text-muted mb-2" id="portfolio-lightbox-category"></p><p id="portfolio-lightbox-description"></p></div>
+	</div>
+</dialog>
+
+<script src="{{ settings.baseUrl }}js/portfolio.js"></script>

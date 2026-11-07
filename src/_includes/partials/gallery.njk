@@ -1,9 +1,0 @@
-<div id="gallery" class="container-fluid">
-	{% for image in images[gallery] %}
-	<div class="d-flex justify-content-center align-items-center">
-		<a href="{{ settings.baseUrl }}img/galleries/{{ gallery }}/{{ image.name }}.jpg" class="lightbox" data-group="{{ gallery }}">
-			<img src="{{ settings.baseUrl }}img/galleries/{{ gallery }}/{{ image.name }}-thumb.jpg" class="img-fluid" alt="{{ image.alt }}">
-		</a>
-	</div>
-	{% endfor %}
-</div>
