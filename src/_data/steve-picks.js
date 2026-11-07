@@ -152,19 +152,19 @@ module.exports = [
     "project": "Brown"
   },
   {
-    "filename": "6.6.jpg",
-    "image": "6.6.jpg",
-    "assetDir": "steve-picks/20",
+    "filename": "CRW_2769-cloned.jpg",
+    "image": "CRW_2769-cloned.jpg",
+    "assetDir": "steve-picks",
     "category": "Custom Millwork",
-    "description": "Living room fireplace wall with a stone surround, television, illuminated white display shelving, and built-in lower cabinets.",
-    "project": "6.6.jpg"
+    "description": "Living room media wall with a stone fireplace, television, wood mantel, and symmetrical white display shelving.",
+    "project": "CRW_2769-cloned.jpg"
   },
   {
-    "filename": "20181119_153352.jpg",
-    "image": "20181119_153352.jpg",
-    "assetDir": "steve-picks/21",
+    "filename": "IMG_1791-HDR.jpg",
+    "image": "IMG_1791-HDR.jpg",
+    "assetDir": "steve-picks",
     "category": "Bathrooms",
-    "description": "Calm bathroom with a floating wood vanity, round mirror, white countertop, open storage, and a rustic ladder towel rack.",
+    "description": "Bright bathroom vanity with a round mirror, wood cabinetry, open shelving, and a rustic ladder towel rack.",
     "project": "2"
   },
   {
@@ -390,5 +390,40 @@ module.exports = [
     "category": "Kitchens",
     "description": "Bright kitchen with white cabinetry, a dark range hood and backsplash, open display shelving, and a central island.",
     "project": "O_Rilley"
+  },
+  {
+    "filename": "Shot-11.jpg",
+    "image": "Shot-11.jpg",
+    "assetDir": "steve-picks",
+    "category": "Custom Millwork",
+    "description": "Dark wood custom bar with a granite counter, raised panel cabinetry, decorative columns, and built-in display storage."
+  },
+  {
+    "filename": "CRW_1245-Edit.jpg",
+    "image": "CRW_1245-Edit.jpg",
+    "assetDir": "steve-picks",
+    "category": "Custom Millwork",
+    "description": "Built-in dark gray wine bar with two wine coolers, illuminated shelving, lattice bottle racks, and surrounding white cabinetry."
+  },
+  {
+    "filename": "CRW_1348-Edit-Edit-2-Edit.jpg",
+    "image": "CRW_1348-Edit-Edit-2-Edit.jpg",
+    "assetDir": "steve-picks",
+    "category": "Kitchens",
+    "description": "Bright white kitchen with a large island, seating for five, dark backsplash and flooring, and stainless steel appliances."
+  },
+  {
+    "filename": "IMG_8638-Edit.jpg",
+    "image": "IMG_8638-Edit.jpg",
+    "assetDir": "steve-picks",
+    "category": "Custom Millwork",
+    "description": "Dark wood built-in library and home office with full-height bookcases, a desk, display shelving, and lower cabinets."
+  },
+  {
+    "filename": "IMG_0098-Edit.jpg",
+    "image": "IMG_0098-Edit.jpg",
+    "assetDir": "steve-picks",
+    "category": "Kitchens",
+    "description": "Bright white kitchen with a central island, pendant lighting, paneled cabinetry, a tiled backsplash, and an adjacent dining nook."
   }
 ];
