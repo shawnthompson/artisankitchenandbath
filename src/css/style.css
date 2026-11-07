@@ -633,3 +633,196 @@ li[itemprop="address"] i.fa {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+
+/* Respect the visitor's system colour preference. */
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+	}
+
+	body {
+		background: #182526;
+		color: #eef3ef;
+	}
+
+	a,
+	a:visited {
+		color: #8ce8e1;
+	}
+
+	a:hover,
+	a:focus,
+	a:focus-visible {
+		color: #ffe08a;
+	}
+
+	.site-brand img {
+		filter: invert(1) brightness(1.8);
+	}
+
+	.site-header {
+		background: rgba(24, 37, 38, .96);
+		border-color: #526361;
+	}
+
+	.site-navigation-links a,
+	.site-navigation-links a:visited {
+		color: #dce6e1;
+	}
+
+	.site-navigation-links a:hover,
+	.site-navigation-links a:focus-visible,
+	.site-navigation-current {
+		color: #f4c49c;
+	}
+
+	.site-navigation-current {
+		border-color: #f4c49c;
+	}
+
+	.site-footer {
+		background: #0b1112;
+		color: #dce6e1;
+	}
+
+	.site-footer a {
+		color: #f4c49c;
+	}
+
+	.portfolio-hero {
+		background-image: linear-gradient(90deg, rgba(5, 13, 14, .92) 0%, rgba(5, 13, 14, .78) 48%, rgba(5, 13, 14, .35) 100%), url('/img/steve-picks/42/IMG_3547-HDR.jpg');
+	}
+
+	.partners-hero {
+		background-image: linear-gradient(90deg, rgba(5, 13, 14, .92) 0%, rgba(5, 13, 14, .78) 48%, rgba(5, 13, 14, .35) 100%), url('/img/headerTraditional.png');
+	}
+
+	.contact-hero {
+		background-image: linear-gradient(90deg, rgba(5, 13, 14, .92) 0%, rgba(5, 13, 14, .78) 48%, rgba(5, 13, 14, .35) 100%), url('/img/contact-hero.jpg');
+	}
+
+	.portfolio-hero-copy {
+		background: rgba(5, 13, 14, .46);
+	}
+
+	.portfolio-hero-eyebrow,
+	.eyebrow {
+		color: #f4c49c;
+	}
+
+	.portfolio-filters .btn {
+		border-color: #d39a6a;
+		color: #f4c49c;
+	}
+
+	.portfolio-filters .btn:hover,
+	.portfolio-filters .btn:focus,
+	.portfolio-filters .btn:focus-visible,
+	.portfolio-filters .btn.active {
+		border-color: #b8784b;
+		background: #b8784b;
+		color: #fff;
+	}
+
+	.portfolio-subject + .portfolio-subject {
+		border-color: #526361;
+	}
+
+	.portfolio-image-button {
+		background: #243536;
+	}
+
+	.portfolio-lightbox-close {
+		background-color: #f8f7f2;
+	}
+
+	.portfolio-lightbox {
+		background: #101b1c;
+		color: #eef3ef;
+	}
+
+	.portfolio-lightbox .text-muted {
+		color: #d0dbd6 !important;
+	}
+
+	.partners-page,
+	.contact-form-section {
+		background: #182526;
+		color: #eef3ef;
+	}
+
+	.partners-intro p,
+	.partner-group-intro p {
+		color: #d0dbd6;
+	}
+
+	.partner-group-dark {
+		background: #101719;
+	}
+
+	.partner-group-light {
+		background: #202f30;
+		color: #eef3ef;
+	}
+
+	.partner-group-dark .partner-group-intro p {
+		color: #d0dbd6;
+	}
+
+	.partner-logo {
+		background: #f8f7f2;
+	}
+
+	.partner-logo:hover,
+	.partner-logo:focus-visible {
+		background: #fff;
+	}
+
+	.partner-logo-dark {
+		background: #202428;
+	}
+
+	.partner-logo-dark:hover,
+	.partner-logo-dark:focus-visible {
+		background: #314344;
+	}
+
+	.contact-form-section label,
+	.contact-form-section legend {
+		color: #eef3ef;
+	}
+
+	.contact-form-section .form-control,
+	.contact-form-section .form-check-input {
+		background-color: #243536;
+		border-color: #71817e;
+		color: #eef3ef;
+	}
+
+	.contact-form-section .form-control:focus,
+	.contact-form-section .form-check-input:focus {
+		background-color: #314344;
+		color: #fff;
+	}
+
+	.contact-form-section .lead {
+		color: #d0dbd6;
+	}
+
+	.showroom-section {
+		background: #101719;
+	}
+
+	.showroom-section .section-intro p,
+	.showroom-card-content p {
+		color: #d0dbd6;
+	}
+
+	.showroom-card-content {
+		background: #314344;
+	}
+
+	.btn-close {
+		filter: none;
+	}
+}

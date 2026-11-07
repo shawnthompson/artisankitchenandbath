@@ -95,6 +95,36 @@ permalink: /index.html
     dialog::backdrop { background:rgba(0,0,0,.75); }
     .close { position:absolute; top:10px; right:10px; z-index:1; width:36px; height:36px; border:0; border-radius:50%; background:white; color:var(--ink); font-size:22px; }
     .button:hover, .button:focus-visible { outline:3px solid #f4c49c; outline-offset:4px; }
+    @media (prefers-color-scheme: dark) {
+      :root { --ink:#eef3ef; --muted:#d0dbd6; --paper:#182526; --white:#f8f7f2; --line:#526361; --accent:#d39a6a; --accent-dark:#b8784b; --dark:#101719; }
+      :root { color-scheme:dark; }
+      body { background:var(--paper); color:var(--ink); }
+      .site-header { background:rgba(24,37,38,.96); border-color:var(--line); }
+      .brand img { filter:invert(1) brightness(1.8); }
+      nav a { color:#dce6e1; }
+      nav a:hover, nav a:focus-visible { color:#f4c49c; }
+      nav a.active { color:#f4c49c; border-color:#f4c49c; }
+      .button { background:var(--accent-dark); border-color:var(--accent-dark); }
+      .button.secondary { border-color:rgba(255,255,255,.82); }
+      .button:hover, .button:focus-visible { background:#8d542f; border-color:#8d542f; }
+      .hero { background-image:linear-gradient(90deg,rgba(5,13,14,.92) 0%,rgba(5,13,14,.78) 48%,rgba(5,13,14,.35) 100%),url('img/steve-picks/08/IMG_5346.jpg'); }
+      .hero-copy { background:rgba(5,13,14,.46); }
+      .eyebrow { color:#f4c49c; }
+      .story-card, .contact-card { background:#243536; border-color:var(--line); }
+      .story-card p, .section-intro p, .contact-card p { color:var(--muted); }
+      .portfolio, .dealers { background:#101719; }
+      .project-card, .dealer-logo, .testimonial { background:#314344; }
+      .process, .dark-process { background:#202f30; color:var(--ink); }
+      .dark-process .step, .step { background:#314344; }
+      .dark-process .section-intro p, .dark-process .step p, .step p { color:var(--muted); }
+      .dealers-link { background:var(--accent-dark); }
+      .dealers-link:hover, .dealers-link:focus-visible { background:#8d542f; }
+      #contact { background:#202f30; }
+      footer { background:#0b1112; color:#dce6e1; }
+      footer a, .contact-card a { color:#f4c49c; }
+      dialog { background:#101b1c; }
+      .close { background:#f8f7f2; color:#182526; }
+    }
     @media (max-width:800px) { .site-header { align-items:flex-start; flex-direction:column; } .story-grid,.gallery,.process-grid,.about-grid,.contact-grid,.dealer-grid,.testimonial-grid { grid-template-columns:1fr; } .hero { min-height:70vh; } .button.secondary { margin:10px 0 0; } footer .footer-grid { grid-template-columns:1fr; } }
   </style>
 </head>
